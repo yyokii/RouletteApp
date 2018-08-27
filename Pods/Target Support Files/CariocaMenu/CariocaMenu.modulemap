@@ -1,0 +1,6 @@
+framework module CariocaMenu {
+  umbrella header "CariocaMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

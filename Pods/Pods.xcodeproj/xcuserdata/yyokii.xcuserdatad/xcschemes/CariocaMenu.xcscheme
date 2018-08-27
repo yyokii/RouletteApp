@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B5DDB854119D345F41D221A7164AB17E"
-               BlueprintName = "Pods-RouletteApp"
+               BlueprintIdentifier = "B9B270933E7B527724951AD381678F5C"
+               BlueprintName = "CariocaMenu"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-RouletteApp.framework">
+               BuildableName = "CariocaMenu.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,18 +1,22 @@
 PODS:
+  - CariocaMenu (2.0.1)
   - Charts (3.1.1):
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
 
 DEPENDENCIES:
+  - CariocaMenu (~> 2.0.1)
   - Charts
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CariocaMenu
     - Charts
 
 SPEC CHECKSUMS:
+  CariocaMenu: ccd056f43c4c557aa3f8e60dc81396bfe052233a
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
 
-PODFILE CHECKSUM: ffcfaffe6419db9ebb56758ff84834b4427acf14
+PODFILE CHECKSUM: d5280febbd21a77a192f708f8ad5d492280a3149
 
 COCOAPODS: 1.5.2
