@@ -6,6 +6,6 @@ target 'RouletteApp' do
   use_frameworks!
 
   # Pods for RouletteApp
-  pod 'SwiftFormat/CLI'
+  pod 'Charts'
 
 end

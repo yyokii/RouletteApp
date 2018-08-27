@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B602091F3E24444681CA742 /* Pods_RouletteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */; };
 		B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675B40C213449AC0083B5A7 /* AppDelegate.swift */; };
 		B675B40F213449AC0083B5A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675B40E213449AC0083B5A7 /* ViewController.swift */; };
 		B675B412213449AC0083B5A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B410213449AC0083B5A7 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1EC45F3F06AFDEB830889F /* Pods-RouletteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouletteApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp.release.xcconfig"; sourceTree = "<group>"; };
+		8B4262C464200A2DAE4417FA /* Pods-RouletteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouletteApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B675B409213449AC0083B5A7 /* RouletteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B675B40C213449AC0083B5A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B675B40E213449AC0083B5A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		B675B413213449B00083B5A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B675B416213449B10083B5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B675B418213449B10083B5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouletteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B602091F3E24444681CA742 /* Pods_RouletteApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A4D44F00FFFBAFB8ED8C329 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B675B400213449AB0083B5A7 = {
 			isa = PBXGroup;
 			children = (
 				B675B40B213449AC0083B5A7 /* RouletteApp */,
 				B675B40A213449AC0083B5A7 /* Products */,
+				D1F511CB0E49DEC426CADEA4 /* Pods */,
+				9A4D44F00FFFBAFB8ED8C329 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,78 @@
 			isa = PBXGroup;
 			children = (
 				B675B40C213449AC0083B5A7 /* AppDelegate.swift */,
-				B675B40E213449AC0083B5A7 /* ViewController.swift */,
-				B675B410213449AC0083B5A7 /* Main.storyboard */,
-				B675B413213449B00083B5A7 /* Assets.xcassets */,
-				B675B415213449B10083B5A7 /* LaunchScreen.storyboard */,
 				B675B418213449B10083B5A7 /* Info.plist */,
+				B675B42721344FD10083B5A7 /* Model */,
+				B675B42821344FDD0083B5A7 /* View */,
+				B675B42A21344FFE0083B5A7 /* Utility */,
+				B675B42921344FE10083B5A7 /* Controll */,
 			);
 			path = RouletteApp;
+			sourceTree = "<group>";
+		};
+		B675B42721344FD10083B5A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B675B42C2134502F0083B5A7 /* Logic */,
+				B675B42B213450230083B5A7 /* Entity */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B675B42821344FDD0083B5A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B675B413213449B00083B5A7 /* Assets.xcassets */,
+				B675B42D2134503C0083B5A7 /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B675B42921344FE10083B5A7 /* Controll */ = {
+			isa = PBXGroup;
+			children = (
+				B675B40E213449AC0083B5A7 /* ViewController.swift */,
+			);
+			path = Controll;
+			sourceTree = "<group>";
+		};
+		B675B42A21344FFE0083B5A7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B675B42B213450230083B5A7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B675B42C2134502F0083B5A7 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		B675B42D2134503C0083B5A7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B675B410213449AC0083B5A7 /* Main.storyboard */,
+				B675B415213449B10083B5A7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D1F511CB0E49DEC426CADEA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B4262C464200A2DAE4417FA /* Pods-RouletteApp.debug.xcconfig */,
+				0F1EC45F3F06AFDEB830889F /* Pods-RouletteApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,10 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B675B41B213449B10083B5A7 /* Build configuration list for PBXNativeTarget "RouletteApp" */;
 			buildPhases = (
+				3E2B8F8A9F6FFF4680BE5992 /* [CP] Check Pods Manifest.lock */,
 				B675B405213449AC0083B5A7 /* Sources */,
 				B675B406213449AC0083B5A7 /* Frameworks */,
 				B675B407213449AC0083B5A7 /* Resources */,
 				B675B41E21344AF30083B5A7 /* ShellScript */,
+				FB1138C2CD28BD325D202E6F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +214,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3E2B8F8A9F6FFF4680BE5992 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RouletteApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B675B41E21344AF30083B5A7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +244,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			showEnvVarsInLog = 0;
+		};
+		FB1138C2CD28BD325D202E6F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -296,6 +414,7 @@
 		};
 		B675B41C213449B10083B5A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B4262C464200A2DAE4417FA /* Pods-RouletteApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +433,7 @@
 		};
 		B675B41D213449B10083B5A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F1EC45F3F06AFDEB830889F /* Pods-RouletteApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
