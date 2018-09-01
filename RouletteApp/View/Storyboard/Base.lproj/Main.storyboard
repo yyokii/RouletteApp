@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,127 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RouletteApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="286" y="134"/>
+        </scene>
+        <!--MenuVC-->
+        <scene sceneID="oBq-Rd-pcO">
+            <objects>
+                <tableViewController storyboardIdentifier="Menu" id="zpG-Sy-AbI" customClass="MenuVC" customModule="RouletteApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="an8-5a-Tsa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="1" alpha="0.19636115770000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="4Cn-Ko-lBz" customClass="MenuItemCell" customModule="RouletteApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Cn-Ko-lBz" id="foU-vK-va1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lez-QL-awv">
+                                            <rect key="frame" x="64" y="0.0" width="247" height="43.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRG-vJ-uMx" customClass="CariocaIconView" customModule="RouletteApp" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="E21-36-W7h"/>
+                                                <constraint firstAttribute="height" constant="30" id="vkk-c2-Yup"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Lez-QL-awv" firstAttribute="leading" relation="lessThanOrEqual" secondItem="foU-vK-va1" secondAttribute="leading" constant="64" id="5a4-sR-IVw"/>
+                                        <constraint firstItem="Lez-QL-awv" firstAttribute="top" secondItem="foU-vK-va1" secondAttribute="top" id="6Sf-r1-clV"/>
+                                        <constraint firstAttribute="trailing" secondItem="FRG-vJ-uMx" secondAttribute="trailing" priority="50" constant="20" id="7UJ-jk-Jle"/>
+                                        <constraint firstAttribute="bottom" secondItem="Lez-QL-awv" secondAttribute="bottom" id="Gdw-YD-SuL"/>
+                                        <constraint firstAttribute="trailing" secondItem="Lez-QL-awv" secondAttribute="trailing" constant="64" id="dpH-ny-w0W"/>
+                                        <constraint firstItem="FRG-vJ-uMx" firstAttribute="leading" secondItem="foU-vK-va1" secondAttribute="leading" priority="100" constant="20" id="ykU-f2-wJG"/>
+                                        <constraint firstItem="FRG-vJ-uMx" firstAttribute="centerY" secondItem="foU-vK-va1" secondAttribute="centerY" id="yvj-qt-t24"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="iconLeftConstraint" destination="ykU-f2-wJG" id="L4X-ia-dGC"/>
+                                    <outlet property="iconRightConstraint" destination="7UJ-jk-Jle" id="j9w-jb-vF6"/>
+                                    <outlet property="iconView" destination="FRG-vJ-uMx" id="nG0-6R-6qa"/>
+                                    <outlet property="titleLabel" destination="Lez-QL-awv" id="QJZ-oG-X1l"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUT-jA-h0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="134"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="SmX-bK-HYe">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="lD4-DG-OHz" customClass="HomeViewController" customModule="RouletteApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dnO-cv-V6U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋🏼 Welcome !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAV-cq-Egn">
+                                <rect key="frame" x="0.0" y="50" width="375" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-eR-moK" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="165.5" width="335" height="335"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kzh-eR-moK" secondAttribute="height" multiplier="1:1" id="cMG-6t-ZyA"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lal-RU-gbH">
+                                <rect key="frame" x="156" y="520.5" width="62" height="30"/>
+                                <state key="normal" title="スタート"/>
+                                <connections>
+                                    <action selector="rouletteBtn:" destination="lD4-DG-OHz" eventType="touchUpInside" id="710-Zv-SXx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XAV-cq-Egn" firstAttribute="top" secondItem="LRU-xs-pKA" secondAttribute="top" constant="30" id="7At-dO-dlp"/>
+                            <constraint firstItem="Lal-RU-gbH" firstAttribute="top" secondItem="Kzh-eR-moK" secondAttribute="bottom" constant="20" id="P68-wW-dfq"/>
+                            <constraint firstItem="Lal-RU-gbH" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="WGF-qs-uLx"/>
+                            <constraint firstItem="XAV-cq-Egn" firstAttribute="trailing" secondItem="LRU-xs-pKA" secondAttribute="trailing" id="apy-6k-l8K"/>
+                            <constraint firstItem="Kzh-eR-moK" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="auM-97-Bao"/>
+                            <constraint firstItem="Kzh-eR-moK" firstAttribute="centerY" secondItem="dnO-cv-V6U" secondAttribute="centerY" id="c0R-ZI-eMp"/>
+                            <constraint firstItem="XAV-cq-Egn" firstAttribute="leading" secondItem="LRU-xs-pKA" secondAttribute="leading" id="j3a-CC-acY"/>
+                            <constraint firstItem="LRU-xs-pKA" firstAttribute="trailing" secondItem="Kzh-eR-moK" secondAttribute="trailing" constant="20" id="mOg-1t-gXr"/>
+                            <constraint firstItem="Kzh-eR-moK" firstAttribute="leading" secondItem="LRU-xs-pKA" secondAttribute="leading" constant="20" id="oTo-dk-Bzv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LRU-xs-pKA"/>
+                    </view>
+                    <connections>
+                        <outlet property="pieChartView" destination="Kzh-eR-moK" id="yot-tj-iBx"/>
+                        <outlet property="rouletteBtn" destination="Lal-RU-gbH" id="07N-sC-bs5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S4g-ps-n3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709.5999999999999" y="-91.304347826086968"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/MenuVC.swift"
+            timestampString = "557422355.8809789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "MenuVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.boomerang.getter : CariocaMenu.BoomerangType"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.13081"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.boomerang.setter : CariocaMenu.BoomerangType"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.133324"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.init(style: __C.UITableViewStyle) -&gt; RouletteApp.MenuVC"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.135512"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; RouletteApp.MenuVC"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.1395921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "377">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;RouletteApp.MenuVC&gt;"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.145835"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controller/MenuVC.swift"
+            timestampString = "557422355.881409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "menuItems"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.menuItems.getter : Swift.Array&lt;CariocaMenu.CariocaMenuItem&gt;"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.189392"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.menuItems.setter : Swift.Array&lt;CariocaMenu.CariocaMenuItem&gt;"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.194165"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.init(style: __C.UITableViewStyle) -&gt; RouletteApp.MenuVC"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.200588"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "362">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; RouletteApp.MenuVC"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.203189"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RouletteApp.MenuVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;RouletteApp.MenuVC&gt;"
+                  moduleName = "RouletteApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yyokii/Desktop/%E3%83%86%E3%82%99%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%20-%20Yoki%E3%81%AEMacBook%20Pro/iOSProjects/RouletteApp/Controller/MenuVC.swift"
+                  timestampString = "557165189.207391"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "362">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

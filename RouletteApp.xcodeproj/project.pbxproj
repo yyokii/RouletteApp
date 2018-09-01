@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8B602091F3E24444681CA742 /* Pods_RouletteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */; };
+		B63843422135A44000CEF376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843412135A44000CEF376 /* ViewController.swift */; };
+		B63843442135A4F100CEF376 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843432135A4F100CEF376 /* MenuVC.swift */; };
+		B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843472135A8DE00CEF376 /* Storyboardable.swift */; };
+		B638434A2135A91400CEF376 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843492135A91400CEF376 /* BaseVC.swift */; };
+		B638434C2135A95800CEF376 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638434B2135A95800CEF376 /* HomeVC.swift */; };
+		B63843522139895000CEF376 /* PieChartSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843512139895000CEF376 /* PieChartSetting.swift */; };
 		B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675B40C213449AC0083B5A7 /* AppDelegate.swift */; };
-		B675B40F213449AC0083B5A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675B40E213449AC0083B5A7 /* ViewController.swift */; };
 		B675B412213449AC0083B5A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B410213449AC0083B5A7 /* Main.storyboard */; };
 		B675B414213449B00083B5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B675B413213449B00083B5A7 /* Assets.xcassets */; };
 		B675B417213449B10083B5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B415213449B10083B5A7 /* LaunchScreen.storyboard */; };
@@ -18,9 +23,14 @@
 /* Begin PBXFileReference section */
 		0F1EC45F3F06AFDEB830889F /* Pods-RouletteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouletteApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp.release.xcconfig"; sourceTree = "<group>"; };
 		8B4262C464200A2DAE4417FA /* Pods-RouletteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouletteApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B63843412135A44000CEF376 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = RouletteApp/Controller/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		B63843432135A4F100CEF376 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B63843472135A8DE00CEF376 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		B63843492135A91400CEF376 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		B638434B2135A95800CEF376 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		B63843512139895000CEF376 /* PieChartSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSetting.swift; sourceTree = "<group>"; };
 		B675B409213449AC0083B5A7 /* RouletteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B675B40C213449AC0083B5A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B675B40E213449AC0083B5A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B675B411213449AC0083B5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B675B413213449B00083B5A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B675B416213449B10083B5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +58,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B63843402135A40700CEF376 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B63843412135A44000CEF376 /* ViewController.swift */,
+				B63843432135A4F100CEF376 /* MenuVC.swift */,
+				B63843452135A73500CEF376 /* ContentVC */,
+			);
+			name = Controller;
+			path = ../Controller;
+			sourceTree = "<group>";
+		};
+		B63843452135A73500CEF376 /* ContentVC */ = {
+			isa = PBXGroup;
+			children = (
+				B63843492135A91400CEF376 /* BaseVC.swift */,
+				B638434B2135A95800CEF376 /* HomeVC.swift */,
+			);
+			path = ContentVC;
+			sourceTree = "<group>";
+		};
+		B63843462135A8CC00CEF376 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B63843472135A8DE00CEF376 /* Storyboardable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B675B400213449AB0083B5A7 = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +111,8 @@
 				B675B418213449B10083B5A7 /* Info.plist */,
 				B675B42721344FD10083B5A7 /* Model */,
 				B675B42821344FDD0083B5A7 /* View */,
+				B63843402135A40700CEF376 /* Controller */,
 				B675B42A21344FFE0083B5A7 /* Utility */,
-				B675B42921344FE10083B5A7 /* Controll */,
 			);
 			path = RouletteApp;
 			sourceTree = "<group>";
@@ -92,22 +130,16 @@
 			isa = PBXGroup;
 			children = (
 				B675B413213449B00083B5A7 /* Assets.xcassets */,
+				B63843512139895000CEF376 /* PieChartSetting.swift */,
 				B675B42D2134503C0083B5A7 /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		B675B42921344FE10083B5A7 /* Controll */ = {
-			isa = PBXGroup;
-			children = (
-				B675B40E213449AC0083B5A7 /* ViewController.swift */,
-			);
-			path = Controll;
-			sourceTree = "<group>";
-		};
 		B675B42A21344FFE0083B5A7 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B63843462135A8CC00CEF376 /* View */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -273,8 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B675B40F213449AC0083B5A7 /* ViewController.swift in Sources */,
+				B63843522139895000CEF376 /* PieChartSetting.swift in Sources */,
+				B638434C2135A95800CEF376 /* HomeVC.swift in Sources */,
+				B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */,
+				B63843422135A44000CEF376 /* ViewController.swift in Sources */,
 				B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */,
+				B63843442135A4F100CEF376 /* MenuVC.swift in Sources */,
+				B638434A2135A91400CEF376 /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
