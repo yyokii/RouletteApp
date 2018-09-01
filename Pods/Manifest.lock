@@ -3,20 +3,24 @@ PODS:
   - Charts (3.1.1):
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
+  - ChromaColorPicker (1.7)
 
 DEPENDENCIES:
   - CariocaMenu (~> 2.0.1)
   - Charts
+  - ChromaColorPicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CariocaMenu
     - Charts
+    - ChromaColorPicker
 
 SPEC CHECKSUMS:
   CariocaMenu: ccd056f43c4c557aa3f8e60dc81396bfe052233a
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  ChromaColorPicker: 33efa67b17cca51dd253689d18b83ac7e05642c2
 
-PODFILE CHECKSUM: d5280febbd21a77a192f708f8ad5d492280a3149
+PODFILE CHECKSUM: 906712a398ee947e258e3e5b5cbe5e6a5053cd2a
 
 COCOAPODS: 1.5.2

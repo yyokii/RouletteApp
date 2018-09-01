@@ -13,6 +13,7 @@ class SetDataVC: UIViewController, BaseVC {
     @IBOutlet weak var setDataTableView: UITableView!
     
     var menuController: CariocaController?
+    let colorPickerViewTag = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +39,31 @@ extension SetDataVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RouletteItemCell", for: indexPath) as? RouletteItemCell
+        cell?.rouletteItemCellDelegate = self
         cell?.selectionStyle = .none
         return (cell)!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+}
+
+extension SetDataVC: RouletteItemCellDelegate {
+    func colorViewTapped(colorPickerView: UIControl) {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.prominent)
+        let blurView = EffectView(effect: blurEffect)
+        blurView.frame = view.frame
+        blurView.tag = colorPickerViewTag
+        self.view.addSubview(blurView)
+        
+        colorPickerView.center = blurView.center
+        blurView.contentView.addSubview(colorPickerView)
+    }
+    
+    func colorChoosed() {
+        // カラーピッカーの削除
+        let fetchedColorPickerView = self.view.viewWithTag(colorPickerViewTag)
+        fetchedColorPickerView?.removeFromSuperview()
     }
 }

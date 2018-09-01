@@ -64,7 +64,6 @@ class ViewController: UIViewController {
 
 extension ViewController: CariocaDelegate {
     func cariocamenu(_ menu: CariocaMenu, didSelect item: CariocaMenuItem, at index: Int) {
-        CariocaMenu.log("didSelect \(item) at \(index)")
         switch index {
         case 0:
             displayDemo(HomeVC.fromStoryboard())

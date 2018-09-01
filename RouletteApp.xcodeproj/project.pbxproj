@@ -18,6 +18,7 @@
 		B6384357213A56BF00CEF376 /* RouletteItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6384355213A56BF00CEF376 /* RouletteItemCell.xib */; };
 		B638435A213A596E00CEF376 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384359213A596E00CEF376 /* CircleView.swift */; };
 		B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638435D213A5BB400CEF376 /* SetDataVC.swift */; };
+		B6384362213A925800CEF376 /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384361213A925800CEF376 /* EffectView.swift */; };
 		B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675B40C213449AC0083B5A7 /* AppDelegate.swift */; };
 		B675B412213449AC0083B5A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B410213449AC0083B5A7 /* Main.storyboard */; };
 		B675B414213449B00083B5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B675B413213449B00083B5A7 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		B6384355213A56BF00CEF376 /* RouletteItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouletteItemCell.xib; sourceTree = "<group>"; };
 		B6384359213A596E00CEF376 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		B638435D213A5BB400CEF376 /* SetDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDataVC.swift; sourceTree = "<group>"; };
+		B6384361213A925800CEF376 /* EffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectView.swift; sourceTree = "<group>"; };
 		B675B409213449AC0083B5A7 /* RouletteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B675B40C213449AC0083B5A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B675B411213449AC0083B5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				B6384359213A596E00CEF376 /* CircleView.swift */,
+				B6384361213A925800CEF376 /* EffectView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -316,11 +319,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CariocaMenu/CariocaMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CariocaMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -338,6 +343,7 @@
 				B63843522139895000CEF376 /* PieChartSetting.swift in Sources */,
 				B638434C2135A95800CEF376 /* HomeVC.swift in Sources */,
 				B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */,
+				B6384362213A925800CEF376 /* EffectView.swift in Sources */,
 				B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */,
 				B63843422135A44000CEF376 /* ViewController.swift in Sources */,
 				B6384356213A56BF00CEF376 /* RouletteItemCell.swift in Sources */,
