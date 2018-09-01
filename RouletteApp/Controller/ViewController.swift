@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             )
             carioca?.addInHostView()
             menuController = controller
-            displayDemo(HomeViewController.fromStoryboard())
+            displayDemo(HomeVC.fromStoryboard())
         }
     }
     // MARK: Rotation management
@@ -66,20 +66,18 @@ extension ViewController: CariocaDelegate {
     func cariocamenu(_ menu: CariocaMenu, didSelect item: CariocaMenuItem, at index: Int) {
         CariocaMenu.log("didSelect \(item) at \(index)")
         switch index {
+        case 0:
+            displayDemo(HomeVC.fromStoryboard())
         case 1:
-            print("didSelect：1")
-            //displayDemo(DemoSettingsViewController.fromStoryboard())
+            displayDemo(SetDataVC.fromStoryboard())
         case 2:
-            print("didSelect：2")
-            //displayDemo(DemoAboutViewController.fromStoryboard())
-        case 3:
             print("didSelect：3")
             //displayDemo(DemoTravelViewController.fromStoryboard())
-        case 4:
+        case 3:
             print("didSelect：4")
             //displayDemo(DemoIdeaViewController.fromStoryboard())
         default:
-            displayDemo(HomeViewController.fromStoryboard())
+            displayDemo(HomeVC.fromStoryboard())
         }
     }
     

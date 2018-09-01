@@ -10,7 +10,7 @@ import UIKit
 import CariocaMenu
 import Charts
 
-class HomeViewController: UIViewController, BaseVC, ChartViewDelegate {
+class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var rouletteBtn: UIButton!
     

@@ -14,6 +14,10 @@
 		B638434A2135A91400CEF376 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843492135A91400CEF376 /* BaseVC.swift */; };
 		B638434C2135A95800CEF376 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638434B2135A95800CEF376 /* HomeVC.swift */; };
 		B63843522139895000CEF376 /* PieChartSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843512139895000CEF376 /* PieChartSetting.swift */; };
+		B6384356213A56BF00CEF376 /* RouletteItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384354213A56BF00CEF376 /* RouletteItemCell.swift */; };
+		B6384357213A56BF00CEF376 /* RouletteItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6384355213A56BF00CEF376 /* RouletteItemCell.xib */; };
+		B638435A213A596E00CEF376 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384359213A596E00CEF376 /* CircleView.swift */; };
+		B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638435D213A5BB400CEF376 /* SetDataVC.swift */; };
 		B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675B40C213449AC0083B5A7 /* AppDelegate.swift */; };
 		B675B412213449AC0083B5A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B410213449AC0083B5A7 /* Main.storyboard */; };
 		B675B414213449B00083B5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B675B413213449B00083B5A7 /* Assets.xcassets */; };
@@ -29,6 +33,10 @@
 		B63843492135A91400CEF376 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		B638434B2135A95800CEF376 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B63843512139895000CEF376 /* PieChartSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSetting.swift; sourceTree = "<group>"; };
+		B6384354213A56BF00CEF376 /* RouletteItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteItemCell.swift; sourceTree = "<group>"; };
+		B6384355213A56BF00CEF376 /* RouletteItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouletteItemCell.xib; sourceTree = "<group>"; };
+		B6384359213A596E00CEF376 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		B638435D213A5BB400CEF376 /* SetDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDataVC.swift; sourceTree = "<group>"; };
 		B675B409213449AC0083B5A7 /* RouletteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B675B40C213449AC0083B5A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B675B411213449AC0083B5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 			children = (
 				B63843492135A91400CEF376 /* BaseVC.swift */,
 				B638434B2135A95800CEF376 /* HomeVC.swift */,
+				B638435D213A5BB400CEF376 /* SetDataVC.swift */,
 			);
 			path = ContentVC;
 			sourceTree = "<group>";
@@ -84,6 +93,23 @@
 				B63843472135A8DE00CEF376 /* Storyboardable.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B6384353213A561700CEF376 /* RouletteItem */ = {
+			isa = PBXGroup;
+			children = (
+				B6384354213A56BF00CEF376 /* RouletteItemCell.swift */,
+				B6384355213A56BF00CEF376 /* RouletteItemCell.xib */,
+			);
+			path = RouletteItem;
+			sourceTree = "<group>";
+		};
+		B6384358213A593D00CEF376 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B6384359213A596E00CEF376 /* CircleView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		B675B400213449AB0083B5A7 = {
@@ -129,6 +155,8 @@
 		B675B42821344FDD0083B5A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B6384358213A593D00CEF376 /* CustomView */,
+				B6384353213A561700CEF376 /* RouletteItem */,
 				B675B413213449B00083B5A7 /* Assets.xcassets */,
 				B63843512139895000CEF376 /* PieChartSetting.swift */,
 				B675B42D2134503C0083B5A7 /* Storyboard */,
@@ -237,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6384357213A56BF00CEF376 /* RouletteItemCell.xib in Resources */,
 				B675B417213449B10083B5A7 /* LaunchScreen.storyboard in Resources */,
 				B675B414213449B00083B5A7 /* Assets.xcassets in Resources */,
 				B675B412213449AC0083B5A7 /* Main.storyboard in Resources */,
@@ -305,10 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B638435A213A596E00CEF376 /* CircleView.swift in Sources */,
 				B63843522139895000CEF376 /* PieChartSetting.swift in Sources */,
 				B638434C2135A95800CEF376 /* HomeVC.swift in Sources */,
+				B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */,
 				B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */,
 				B63843422135A44000CEF376 /* ViewController.swift in Sources */,
+				B6384356213A56BF00CEF376 /* RouletteItemCell.swift in Sources */,
 				B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */,
 				B63843442135A4F100CEF376 /* MenuVC.swift in Sources */,
 				B638434A2135A91400CEF376 /* BaseVC.swift in Sources */,
