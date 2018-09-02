@@ -10,8 +10,7 @@ import UIKit
 import ChromaColorPicker
 
 protocol RouletteItemCellDelegate: class {
-    func colorViewTapped(colorPickerView: UIControl)
-    func colorChoosed()
+    func colorViewTapped(row: Int, colorHex: String)
 }
 
 class RouletteItemCell: UITableViewCell {
@@ -19,6 +18,10 @@ class RouletteItemCell: UITableViewCell {
     @IBOutlet weak var colorView: CircleView!
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var ratioTextField: UITextField!
+    
+    // 何番目のcellか
+    var row: Int?
+    var rouletteItemObj: RouletteItemObj?
     
     weak var rouletteItemCellDelegate: RouletteItemCellDelegate?
     
@@ -35,21 +38,15 @@ class RouletteItemCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @objc private func colorViewTapped(sender: UITapGestureRecognizer) {
-        // 色選択viewを表示
-        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        neatColorPicker.delegate = self //ChromaColorPicker
-        neatColorPicker.padding = 5
-        neatColorPicker.stroke = 3
-        neatColorPicker.adjustToColor(colorView.backgroundColor!)
-        
-        rouletteItemCellDelegate?.colorViewTapped(colorPickerView: neatColorPicker)
+    func configureCell(row: Int, rouletteItemObj: RouletteItemObj) {
+        self.row = row
+        self.rouletteItemObj = rouletteItemObj
+        colorView.backgroundColor = UIColor.init(hex: rouletteItemObj.colorHex)
+        itemTextField.text = rouletteItemObj.itemName
+        ratioTextField.text = "\(rouletteItemObj.ratio)"
     }
-}
-
-extension RouletteItemCell: ChromaColorPickerDelegate {
-    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-        colorView.backgroundColor = color
-        rouletteItemCellDelegate?.colorChoosed()
+    
+    @objc private func colorViewTapped(sender: UITapGestureRecognizer) {
+        rouletteItemCellDelegate?.colorViewTapped(row: row!, colorHex: (rouletteItemObj?.colorHex)!)
     }
 }

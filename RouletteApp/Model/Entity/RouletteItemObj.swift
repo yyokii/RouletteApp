@@ -7,6 +7,7 @@
 //
 
 struct RouletteItemObj {
+    var colorHex: String
     var itemName: String
     var ratio: Int
 }
