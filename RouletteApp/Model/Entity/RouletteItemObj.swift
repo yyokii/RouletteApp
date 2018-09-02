@@ -6,8 +6,10 @@
 //  Copyright © 2018年 Yoki Higashihara. All rights reserved.
 //
 
-struct RouletteItemObj {
-    var colorHex: String
-    var itemName: String
-    var ratio: Int
+import RealmSwift
+
+class RouletteItemObj: Object {
+    @objc dynamic var colorHex = "FF9300"
+    @objc dynamic var itemName = "アイテム"
+    @objc dynamic var ratio = 1
 }

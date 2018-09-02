@@ -6,17 +6,21 @@
 //  Copyright © 2018年 Yoki Higashihara. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
-class RouletteDataset {
-    var title: String?
-    var items: [RouletteItemObj]
+/// １つ分のデータセット（realmで保存する）
+class RouletteDataset: Object {
+    @objc dynamic var id = 1
+    @objc dynamic var titile = "ルーレット👍"
+    let items = List<RouletteItemObj>()
     
-    // シングルトン → シングルトン却下で
-    static let sharedInstance: RouletteDataset = RouletteDataset(title: "ルーレット👍", items: [])
-    // initを通るのは最初だけ
-    private init(title: String?, items: [RouletteItemObj]) {
-        self.title = title
-        self.items = items
+    override class func primaryKey() -> String? {
+        return "id"
     }
+}
+
+/// お気に入りデータ（realmで保存する）
+class FavoriteDataset: Object {
+    @objc dynamic var titile = "ルーレット👍"
+    let items = List<RouletteItemObj>()
 }

@@ -9,5 +9,6 @@ target 'RouletteApp' do
   pod 'Charts'
   pod 'CariocaMenu', '~> 2.0.1'
   pod 'ChromaColorPicker'
+  pod 'RealmSwift'
 
 end

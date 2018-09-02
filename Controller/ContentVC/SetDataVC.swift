@@ -16,17 +16,23 @@ class SetDataVC: UIViewController, BaseVC {
     var menuController: CariocaController?
     let colorPickerViewTag = 1
     var rouletteDataset: RouletteDataset?
+    var isFavorite = false
     var tappedColorViewCellRow: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setDataTableView.delegate = self
         setDataTableView.dataSource = self
         setDataTableView.register(UINib(nibName: "RouletteItemCell", bundle: nil), forCellReuseIdentifier: "RouletteItemCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        rouletteDataset = RouletteDataset.sharedInstance
+        if let dataset = RealmManager.sharedInstance.getRouletteDataset() {
+            rouletteDataset = dataset[0]
+        } else {
+            rouletteDataset = RouletteDataset()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +40,24 @@ class SetDataVC: UIViewController, BaseVC {
     }
     
     @IBAction func addBtnTapped(_ sender: Any) {
-        let rouletteItemObj = RouletteItemObj(colorHex: "FF9300", itemName: "アイテム", ratio: 1)
+        let rouletteItemObj = RouletteItemObj()
         rouletteDataset?.items.append(rouletteItemObj)
         setDataTableView.reloadData()
     }
     
     @IBAction func setBtnTapped(_ sender: Any) {
-        // セットボタンを押下したときだけデータセットを更新する
+        // セットボタンを押下したときだけデータセットを更新する、RouletteDatasetをrealmに保存
+        // favorite の状態みて favorite の方にも保存, favしたらRouletteDatasetの方は削除
+        
+        if let dataset = rouletteDataset {
+            RealmManager.sharedInstance.addRouletteDataset(object: dataset)
+        }
+    }
+    
+    @IBAction func resetBtnTapped(_ sender: Any) {
+        RealmManager.sharedInstance.deleteRouletteDataset()
+        rouletteDataset = RouletteDataset()
+        setDataTableView.reloadData()
     }
 }
 
