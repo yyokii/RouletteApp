@@ -17,6 +17,8 @@ class RealmManager {
     }
     
     // MARK: - データ取得
+    
+    // FIXME: id=1に絞りたい
     func getRouletteDataset() -> Results<RouletteDataset>? {
         let results: Results<RouletteDataset> = database!.objects(RouletteDataset.self)
         
@@ -26,8 +28,8 @@ class RealmManager {
         return results
     }
     
-    func getFavoriteDataset() -> Results<FavoriteDataset> {
-        let results: Results<FavoriteDataset> =   database!.objects(FavoriteDataset.self)
+    func getFavoriteDataset() -> Results<FavoriteDataset>? {
+        let results: Results<FavoriteDataset> = database!.objects(FavoriteDataset.self)
         return results
     }
 
@@ -35,14 +37,14 @@ class RealmManager {
     func addRouletteDataset(object: RouletteDataset) {
         try? database?.write {
             database?.add(object, update: true)
-            print("Added new RouletteDataset")
+            print("RouletteDatasetに追加しました")
         }
     }
     
     func addFavoriteDataset(object: FavoriteDataset) {
         try? database?.write {
-            database?.add(object, update: true)
-            print("Added new FavoriteDataset")
+            database?.add(object)
+            print("FavoriteDatasetに追加しました")
         }
     }
     

@@ -12,6 +12,7 @@ import ChromaColorPicker
 
 class SetDataVC: UIViewController, BaseVC {
     @IBOutlet weak var setDataTableView: UITableView!
+    @IBOutlet weak var favoriteLabel: FavoriteLabel!
     
     var menuController: CariocaController?
     let colorPickerViewTag = 1
@@ -25,6 +26,7 @@ class SetDataVC: UIViewController, BaseVC {
         setDataTableView.delegate = self
         setDataTableView.dataSource = self
         setDataTableView.register(UINib(nibName: "RouletteItemCell", bundle: nil), forCellReuseIdentifier: "RouletteItemCell")
+        setFavoriteBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +41,21 @@ class SetDataVC: UIViewController, BaseVC {
         super.didReceiveMemoryWarning()
     }
     
+    private func setFavoriteBtn() {
+        let favoriteLblTap = UITapGestureRecognizer(target: self, action: #selector(favoriteLblTapped(sender:)))
+        favoriteLabel.isUserInteractionEnabled = true
+        favoriteLabel.addGestureRecognizer(favoriteLblTap)
+    }
+    
+    @objc func favoriteLblTapped (sender: UITapGestureRecognizer) {
+        isFavorite = !isFavorite
+        if isFavorite {
+            favoriteLabel.favorite()
+        } else {
+            favoriteLabel.notFavorite()
+        }
+    }
+    
     @IBAction func addBtnTapped(_ sender: Any) {
         let rouletteItemObj = RouletteItemObj()
         rouletteDataset?.items.append(rouletteItemObj)
@@ -51,6 +68,13 @@ class SetDataVC: UIViewController, BaseVC {
         
         if let dataset = rouletteDataset {
             RealmManager.sharedInstance.addRouletteDataset(object: dataset)
+            if isFavorite {
+                // お気に入りに追加
+                let favoriteDataset = FavoriteDataset()
+                favoriteDataset.titile = dataset.titile
+                favoriteDataset.items = dataset.items
+                RealmManager.sharedInstance.addFavoriteDataset(object: favoriteDataset)
+            }
         }
     }
     

@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4g-ps-n3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="-91.304347826086968"/>
+            <point key="canvasLocation" x="1775" y="134"/>
         </scene>
         <!--Set DataVC-->
         <scene sceneID="24B-et-0Lc">
@@ -225,12 +225,53 @@
                         <viewLayoutGuide key="safeArea" id="4n0-B8-6Bu"/>
                     </view>
                     <connections>
+                        <outlet property="favoriteLabel" destination="2AN-kL-SkA" id="XDR-x6-eJc"/>
                         <outlet property="setDataTableView" destination="JeH-DK-q6W" id="XH9-44-tgn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBV-1P-5Vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2549.5999999999999" y="-91.304347826086968"/>
+        </scene>
+        <!--FavoriteVC-->
+        <scene sceneID="j1v-bW-AwM">
+            <objects>
+                <viewController storyboardIdentifier="FavoriteVC" id="kCD-Ec-gct" customClass="FavoriteVC" customModule="RouletteApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yec-dZ-ecE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VrA-Ny-dXV">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cWT-fk-Wgv">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWT-fk-Wgv" id="DtQ-Ah-JeI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6lB-1K-Hde" firstAttribute="bottom" secondItem="VrA-Ny-dXV" secondAttribute="bottom" id="24O-fp-NsX"/>
+                            <constraint firstItem="VrA-Ny-dXV" firstAttribute="top" secondItem="6lB-1K-Hde" secondAttribute="top" id="3au-Hl-6H9"/>
+                            <constraint firstItem="VrA-Ny-dXV" firstAttribute="leading" secondItem="6lB-1K-Hde" secondAttribute="leading" id="FB3-a7-1D6"/>
+                            <constraint firstItem="VrA-Ny-dXV" firstAttribute="trailing" secondItem="6lB-1K-Hde" secondAttribute="trailing" id="uhh-vC-ruk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6lB-1K-Hde"/>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="VrA-Ny-dXV" id="vps-Cw-720"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pdi-Bn-YO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2549.5999999999999" y="677.81109445277366"/>
         </scene>
     </scenes>
 </document>

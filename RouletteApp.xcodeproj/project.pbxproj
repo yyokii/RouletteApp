@@ -24,6 +24,9 @@
 		B6384369213AE04800CEF376 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384368213AE04800CEF376 /* ExtensionUIColor.swift */; };
 		B638436B213BCB9900CEF376 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638436A213BCB9900CEF376 /* RealmManager.swift */; };
 		B638436D213C67AD00CEF376 /* FavoriteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638436C213C67AD00CEF376 /* FavoriteLabel.swift */; };
+		B6384371213D01F500CEF376 /* FavoriteItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638436F213D01F500CEF376 /* FavoriteItemCell.swift */; };
+		B6384372213D01F500CEF376 /* FavoriteItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6384370213D01F500CEF376 /* FavoriteItemCell.xib */; };
+		B6384374213D02B400CEF376 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384373213D02B400CEF376 /* FavoriteVC.swift */; };
 		B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675B40C213449AC0083B5A7 /* AppDelegate.swift */; };
 		B675B412213449AC0083B5A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B410213449AC0083B5A7 /* Main.storyboard */; };
 		B675B414213449B00083B5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B675B413213449B00083B5A7 /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		B6384368213AE04800CEF376 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		B638436A213BCB9900CEF376 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		B638436C213C67AD00CEF376 /* FavoriteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLabel.swift; sourceTree = "<group>"; };
+		B638436F213D01F500CEF376 /* FavoriteItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemCell.swift; sourceTree = "<group>"; };
+		B6384370213D01F500CEF376 /* FavoriteItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteItemCell.xib; sourceTree = "<group>"; };
+		B6384373213D02B400CEF376 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		B675B409213449AC0083B5A7 /* RouletteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B675B40C213449AC0083B5A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B675B411213449AC0083B5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 				B63843492135A91400CEF376 /* BaseVC.swift */,
 				B638434B2135A95800CEF376 /* HomeVC.swift */,
 				B638435D213A5BB400CEF376 /* SetDataVC.swift */,
+				B6384373213D02B400CEF376 /* FavoriteVC.swift */,
 			);
 			path = ContentVC;
 			sourceTree = "<group>";
@@ -132,6 +139,15 @@
 				B6384368213AE04800CEF376 /* ExtensionUIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B638436E213D00ED00CEF376 /* FavoriteItem */ = {
+			isa = PBXGroup;
+			children = (
+				B638436F213D01F500CEF376 /* FavoriteItemCell.swift */,
+				B6384370213D01F500CEF376 /* FavoriteItemCell.xib */,
+			);
+			path = FavoriteItem;
 			sourceTree = "<group>";
 		};
 		B675B400213449AB0083B5A7 = {
@@ -178,10 +194,11 @@
 		B675B42821344FDD0083B5A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B638436E213D00ED00CEF376 /* FavoriteItem */,
 				B6384358213A593D00CEF376 /* CustomView */,
 				B6384353213A561700CEF376 /* RouletteItem */,
-				B675B413213449B00083B5A7 /* Assets.xcassets */,
 				B63843512139895000CEF376 /* PieChartSetting.swift */,
+				B675B413213449B00083B5A7 /* Assets.xcassets */,
 				B675B42D2134503C0083B5A7 /* Storyboard */,
 			);
 			path = View;
@@ -294,6 +311,7 @@
 				B6384357213A56BF00CEF376 /* RouletteItemCell.xib in Resources */,
 				B675B417213449B10083B5A7 /* LaunchScreen.storyboard in Resources */,
 				B675B414213449B00083B5A7 /* Assets.xcassets in Resources */,
+				B6384372213D01F500CEF376 /* FavoriteItemCell.xib in Resources */,
 				B675B412213449AC0083B5A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,8 +394,10 @@
 				B6384362213A925800CEF376 /* EffectView.swift in Sources */,
 				B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */,
 				B63843422135A44000CEF376 /* ViewController.swift in Sources */,
+				B6384374213D02B400CEF376 /* FavoriteVC.swift in Sources */,
 				B6384356213A56BF00CEF376 /* RouletteItemCell.swift in Sources */,
 				B6384366213AC99600CEF376 /* RouletteDataset.swift in Sources */,
+				B6384371213D01F500CEF376 /* FavoriteItemCell.swift in Sources */,
 				B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */,
 				B63843442135A4F100CEF376 /* MenuVC.swift in Sources */,
 				B638436D213C67AD00CEF376 /* FavoriteLabel.swift in Sources */,

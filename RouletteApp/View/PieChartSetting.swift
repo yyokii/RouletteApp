@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 import Charts
 
 class PieChartSetting: UIView {
@@ -14,7 +15,7 @@ class PieChartSetting: UIView {
     /// 円グラフの設定処理
     ///
     /// - Parameter chartView: チャートビュー
-    static func setPirchartView(chartView: PieChartView) {
+    static func setPieChartView(chartView: PieChartView) {
         chartView.setExtraOffsets(left: 5, top: 0, right: 5, bottom: 0)
         chartView.legend.enabled = false
         chartView.drawCenterTextEnabled = true
@@ -37,11 +38,15 @@ class PieChartSetting: UIView {
     /// - Parameters:
     ///   - count: データ数
     ///   - range: データレンジ
-    static func setDataCount(chartView: PieChartView, _ count: Int, range: UInt32, parties: [String]) {
-        let entries = (0..<count).map { (i) -> PieChartDataEntry in
+    static func setDataCount(chartView: PieChartView, rouletteDataset: RouletteDataset?) {
+        guard let dataset = rouletteDataset else {
+            return
+        }
+        let range = getRange(rouletteItemObjList: dataset.items)
+        let entries = (0..<dataset.items.count).map { (i) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-            return PieChartDataEntry(value: Double(arc4random_uniform(range) + range / 5),
-                                     label: parties[i % parties.count],
+            return PieChartDataEntry(value: Double(dataset.items[i].ratio)/range * 100.0,
+                                     label: dataset.items[i].itemName,
                                      icon: nil)
         }
         
@@ -64,5 +69,17 @@ class PieChartSetting: UIView {
         
         chartView.data = data
         chartView.highlightValues(nil)
+    }
+    
+    /// データを円グラフで「%」表示にしたいので、割合計算時の分母を作る用
+    ///
+    /// - Parameter rouletteItemObjList: dbから取得した投稿データ
+    /// - Returns: 分母として使う数字
+    static func getRange(rouletteItemObjList: List<RouletteItemObj>) -> Double {
+        var countSum = 0.0
+        for data in rouletteItemObjList {
+            countSum += Double(data.ratio)
+        }
+        return countSum
     }
 }

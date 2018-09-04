@@ -70,8 +70,7 @@ extension ViewController: CariocaDelegate {
         case 1:
             displayDemo(SetDataVC.fromStoryboard())
         case 2:
-            print("didSelect：3")
-            //displayDemo(DemoTravelViewController.fromStoryboard())
+            displayDemo(FavoriteVC.fromStoryboard())
         case 3:
             print("didSelect：4")
             //displayDemo(DemoIdeaViewController.fromStoryboard())

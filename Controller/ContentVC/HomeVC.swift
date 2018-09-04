@@ -15,6 +15,7 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     @IBOutlet weak var rouletteBtn: UIButton!
     
     weak var menuController: CariocaController?
+    var rouletteDataset: RouletteDataset?
     // true: 回転中、　false：停止中
     var spinFlag = false
     // ルーレットを止める場所
@@ -31,11 +32,23 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     override func viewDidLoad() {
         spinFlag = false
         pieChartView.delegate = self
-        
-        PieChartSetting.setPirchartView(chartView: pieChartView)
-        PieChartSetting.setDataCount(chartView: pieChartView, 4, range: 100, parties: parties)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let dataset = RealmManager.sharedInstance.getRouletteDataset() {
+            rouletteDataset = dataset[0]
+        } else {
+            rouletteDataset = RouletteDataset()
+        }
+        applyPieChartView()
+    }
+    
+    private func applyPieChartView() {
+        PieChartSetting.setPieChartView(chartView: pieChartView)
+        PieChartSetting.setDataCount(chartView: pieChartView, rouletteDataset: rouletteDataset)
         pieChartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
     }
+    
     @IBAction func rouletteBtn(_ sender: Any) {
         if spinFlag {
             // 回転中

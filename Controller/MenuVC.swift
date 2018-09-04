@@ -22,7 +22,7 @@ class MenuVC: UITableViewController, CariocaDataSource {
     var menuItems: [CariocaMenuItem] = [
         CariocaMenuItem("Roulette", .emoji("👍")),
         CariocaMenuItem("SetData", .emoji("👨🏼‍💻")),
-        CariocaMenuItem("About", .emoji("💓")),
+        CariocaMenuItem("Favorite", .emoji("❤️")),
         CariocaMenuItem("Travel", .emoji("✈️")),
         CariocaMenuItem("Webview", .emoji("⚽️"))
     ]
