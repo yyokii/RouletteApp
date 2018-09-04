@@ -20,12 +20,6 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     var spinFlag = false
     // ルーレットを止める場所
     var angle = 0
-    // サンプルデータ
-    let parties = ["Party A", "Party B", "Party C", "Party D", "Party E", "Party F",
-                   "Party G", "Party H", "Party I", "Party J", "Party K", "Party L",
-                   "Party M", "Party N", "Party O", "Party P", "Party Q", "Party R",
-                   "Party S", "Party T", "Party U", "Party V", "Party W", "Party X",
-                   "Party Y", "Party Z"]
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
