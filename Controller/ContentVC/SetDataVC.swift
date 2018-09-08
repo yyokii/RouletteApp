@@ -59,8 +59,6 @@ class SetDataVC: UIViewController, BaseVC {
     
     @IBAction func addBtnTapped(_ sender: Any) {
         let rouletteItemObj = RouletteItemObj()
-        
-        // FIXME: ここwrite内でやる
         rouletteDataset?.items.append(rouletteItemObj)
         setDataTableView.reloadData()
     }
@@ -82,7 +80,7 @@ class SetDataVC: UIViewController, BaseVC {
     }
     
     @IBAction func resetBtnTapped(_ sender: Any) {
-        RealmManager.sharedInstance.deleteRouletteDataset()
+        // データセットの情報をリセットする、realm内のデータは消さない、空の状態でokを押したらrealm内のデータが変わる
         rouletteDataset = RouletteDataset()
         setDataTableView.reloadData()
     }
