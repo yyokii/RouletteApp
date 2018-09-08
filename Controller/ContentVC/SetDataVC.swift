@@ -31,7 +31,8 @@ class SetDataVC: UIViewController, BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         if let dataset = RealmManager.sharedInstance.getRouletteDataset() {
-            rouletteDataset = dataset[0]
+            
+            rouletteDataset = RouletteDataset(value: dataset[0])
         } else {
             rouletteDataset = RouletteDataset()
         }
@@ -58,6 +59,8 @@ class SetDataVC: UIViewController, BaseVC {
     
     @IBAction func addBtnTapped(_ sender: Any) {
         let rouletteItemObj = RouletteItemObj()
+        
+        // FIXME: ここwrite内でやる
         rouletteDataset?.items.append(rouletteItemObj)
         setDataTableView.reloadData()
     }
