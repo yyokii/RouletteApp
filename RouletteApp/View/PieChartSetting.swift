@@ -42,23 +42,25 @@ class PieChartSetting: UIView {
         guard let dataset = rouletteDataset else {
             return
         }
+        
+        // データを設定
         let range = getRange(rouletteItemObjList: dataset.items)
-        let entries = (0..<dataset.items.count).map { (i) -> PieChartDataEntry in
+        let entries = (0..<dataset.items.count).map { (num) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-            return PieChartDataEntry(value: Double(dataset.items[i].ratio)/range * 100.0,
-                                     label: dataset.items[i].itemName,
+            return PieChartDataEntry(value: Double(dataset.items[num].ratio)/range * 100.0,
+                                     label: dataset.items[num].itemName,
                                      icon: nil)
         }
         
-        let set = PieChartDataSet(values: entries, label: "Election Results")
+        let set = PieChartDataSet(values: entries, label: "Roulette")
+
+        // 色を設定
+        set.colors = (0..<dataset.items.count).map { (num) -> UIColor in
+            return UIColor(hex: dataset.items[num].colorHex)
+        }
+        
         set.drawIconsEnabled = false
         set.sliceSpace = 2
-        set.colors = ChartColorTemplates.vordiplom()
-            + ChartColorTemplates.joyful()
-            + ChartColorTemplates.colorful()
-            + ChartColorTemplates.liberty()
-            + ChartColorTemplates.pastel()
-            + [UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)]
         
         let data = PieChartData(dataSet: set)
         

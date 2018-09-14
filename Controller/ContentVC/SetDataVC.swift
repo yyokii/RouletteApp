@@ -49,6 +49,8 @@ class SetDataVC: UIViewController, BaseVC {
         } else {
             rouletteDataset = RouletteDataset()
         }
+        
+        titleTextField.text = rouletteDataset?.titile
     }
 
     override func didReceiveMemoryWarning() {
