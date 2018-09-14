@@ -11,6 +11,8 @@ import ChromaColorPicker
 
 protocol RouletteItemCellDelegate: class {
     func colorViewTapped(row: Int, colorHex: String)
+    func itemTextFieldDidEndEditing(row: Int, text: String?)
+    func ratioTextFieldDidEndEditing(row: Int, text: String?)
 }
 
 class RouletteItemCell: UITableViewCell {
@@ -27,15 +29,28 @@ class RouletteItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
         
-        let imageViewTap = UITapGestureRecognizer(target: self, action: #selector(colorViewTapped(sender:)))
-        colorView.addGestureRecognizer(imageViewTap)
+        let center = NotificationCenter.default
+        center.addObserver(self,
+                           selector: #selector(removeTextFieldFocus),
+                           name: .removeTextFieldFocus,
+                           object: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    private func setupUI() {
+        itemTextField.tag = 1
+        ratioTextField.tag = 2
+        
+        itemTextField.delegate = self
+        ratioTextField.delegate = self
+        
+        let imageViewTap = UITapGestureRecognizer(target: self, action: #selector(colorViewTapped(sender:)))
+        colorView.addGestureRecognizer(imageViewTap)
     }
     
     func configureCell(row: Int, rouletteItemObj: RouletteItemObj) {
@@ -48,5 +63,20 @@ class RouletteItemCell: UITableViewCell {
     
     @objc private func colorViewTapped(sender: UITapGestureRecognizer) {
         rouletteItemCellDelegate?.colorViewTapped(row: row!, colorHex: (rouletteItemObj?.colorHex)!)
+    }
+    
+    @objc private func removeTextFieldFocus() {
+        itemTextField.endEditing(true)
+        ratioTextField.endEditing(true)
+    }
+}
+
+extension RouletteItemCell: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 1 {
+            rouletteItemCellDelegate?.itemTextFieldDidEndEditing(row: row!, text: textField.text)
+        } else if textField.tag == 2 {
+            rouletteItemCellDelegate?.ratioTextFieldDidEndEditing(row: row!, text: textField.text)
+        }
     }
 }

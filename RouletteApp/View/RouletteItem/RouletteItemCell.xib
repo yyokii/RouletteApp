@@ -57,7 +57,7 @@
                 <outlet property="itemTextField" destination="g2F-jJ-LnL" id="WL1-y4-P3b"/>
                 <outlet property="ratioTextField" destination="mZi-ZZ-1Jg" id="RWj-ow-v8A"/>
             </connections>
-            <point key="canvasLocation" x="64.5" y="80"/>
+            <point key="canvasLocation" x="-26" y="78"/>
         </tableViewCell>
     </objects>
 </document>

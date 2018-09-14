@@ -9,13 +9,14 @@
 import UIKit
 import CariocaMenu
 import ChromaColorPicker
+import RealmSwift
 
 class SetDataVC: UIViewController, BaseVC {
     @IBOutlet weak var setDataTableView: UITableView!
     @IBOutlet weak var favoriteLabel: FavoriteLabel!
     
     var menuController: CariocaController?
-    let colorPickerViewTag = 1
+    let colorPickerViewTag = 101
     var rouletteDataset: RouletteDataset?
     var isFavorite = false
     var tappedColorViewCellRow: Int?
@@ -31,8 +32,19 @@ class SetDataVC: UIViewController, BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         if let dataset = RealmManager.sharedInstance.getRouletteDataset() {
-            
-            rouletteDataset = RouletteDataset(value: dataset[0])
+            //rouletteDataset = RouletteDataset(value: dataset[0])
+
+            rouletteDataset = RouletteDataset()
+            // コピーオブジェクトを作成
+            let copyTitle = dataset[0].titile
+            rouletteDataset?.titile = copyTitle
+
+            let copyItems = List<RouletteItemObj>()
+            for item in dataset[0].items {
+                copyItems.append(RouletteItemObj(value: item))
+
+            }
+            rouletteDataset?.items = copyItems
         } else {
             rouletteDataset = RouletteDataset()
         }
@@ -67,6 +79,9 @@ class SetDataVC: UIViewController, BaseVC {
         // セットボタンを押下したときだけデータセットを更新する、RouletteDatasetをrealmに保存
         // favorite の状態みて favorite の方にも保存, favしたらRouletteDatasetの方は削除
         
+        let center = NotificationCenter.default
+        center.post(name: .removeTextFieldFocus, object: nil)
+        
         if let dataset = rouletteDataset {
             RealmManager.sharedInstance.addRouletteDataset(object: dataset)
             if isFavorite {
@@ -86,6 +101,8 @@ class SetDataVC: UIViewController, BaseVC {
     }
 }
 
+
+// MARK: - テーブルビュー
 extension SetDataVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -112,13 +129,23 @@ extension SetDataVC: UITableViewDelegate, UITableViewDataSource {
         cell?.selectionStyle = .none
         return cell!
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("選択されたcell：\(indexPath.row)")
-    }
 }
 
+
+// MARK: - ルーレットアイテムセル
 extension SetDataVC: RouletteItemCellDelegate {
+    func itemTextFieldDidEndEditing(row: Int, text: String?) {
+        if let itemName = text {
+            rouletteDataset?.items[row].itemName = itemName
+        }
+    }
+    
+    func ratioTextFieldDidEndEditing(row: Int, text: String?) {
+        if let ratioText = text {
+            rouletteDataset?.items[row].ratio = Double(ratioText)!
+        }
+    }
+    
     func colorViewTapped(row: Int, colorHex: String) {
         // 選択されたセルが何番目かを保持（rouletteDatasetのデータ更新で使用）
         tappedColorViewCellRow = row
@@ -140,12 +167,13 @@ extension SetDataVC: RouletteItemCellDelegate {
     }
 }
 
+// MARK: - 色が選択されたらデータセットオブジェクトの値を更新する
 extension SetDataVC: ChromaColorPickerDelegate {
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        rouletteDataset?.items[tappedColorViewCellRow!].colorHex = color.hexCode
+        
         let fetchedColorPickerView = self.view.viewWithTag(colorPickerViewTag)
         fetchedColorPickerView?.removeFromSuperview()
-        
-        rouletteDataset?.items[tappedColorViewCellRow!].colorHex = color.hexCode
         setDataTableView.reloadData()
     }
 }
