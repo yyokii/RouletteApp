@@ -13,6 +13,7 @@ import RealmSwift
 
 class SetDataVC: UIViewController, BaseVC {
     @IBOutlet weak var setDataTableView: UITableView!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var favoriteLabel: FavoriteLabel!
     
     var menuController: CariocaController?
@@ -24,6 +25,7 @@ class SetDataVC: UIViewController, BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleTextField.tag = 1
         setDataTableView.delegate = self
         setDataTableView.dataSource = self
         setDataTableView.register(UINib(nibName: "RouletteItemCell", bundle: nil), forCellReuseIdentifier: "RouletteItemCell")
@@ -32,7 +34,6 @@ class SetDataVC: UIViewController, BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         if let dataset = RealmManager.sharedInstance.getRouletteDataset() {
-            //rouletteDataset = RouletteDataset(value: dataset[0])
 
             rouletteDataset = RouletteDataset()
             // コピーオブジェクトを作成
@@ -79,6 +80,7 @@ class SetDataVC: UIViewController, BaseVC {
         // セットボタンを押下したときだけデータセットを更新する、RouletteDatasetをrealmに保存
         // favorite の状態みて favorite の方にも保存, favしたらRouletteDatasetの方は削除
         
+        titleTextField.endEditing(true)
         let center = NotificationCenter.default
         center.post(name: .removeTextFieldFocus, object: nil)
         
@@ -101,6 +103,18 @@ class SetDataVC: UIViewController, BaseVC {
     }
 }
 
+extension SetDataVC: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 1 {
+            // タイトルテキストフィールド
+            if let title = titleTextField.text {
+                rouletteDataset?.titile = title
+            } else {
+                rouletteDataset?.titile = "no name"
+            }
+        }
+    }
+}
 
 // MARK: - テーブルビュー
 extension SetDataVC: UITableViewDelegate, UITableViewDataSource {
@@ -129,8 +143,14 @@ extension SetDataVC: UITableViewDelegate, UITableViewDataSource {
         cell?.selectionStyle = .none
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            rouletteDataset?.items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
-
 
 // MARK: - ルーレットアイテムセル
 extension SetDataVC: RouletteItemCellDelegate {

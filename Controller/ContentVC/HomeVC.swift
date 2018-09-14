@@ -11,6 +11,7 @@ import CariocaMenu
 import Charts
 
 class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var rouletteBtn: UIButton!
     
@@ -34,10 +35,11 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
         } else {
             rouletteDataset = RouletteDataset()
         }
-        applyPieChartView()
+        applyPieChartData()
     }
     
-    private func applyPieChartView() {
+    private func applyPieChartData() {
+        titleLbl.text = rouletteDataset?.titile
         PieChartSetting.setPieChartView(chartView: pieChartView)
         PieChartSetting.setDataCount(chartView: pieChartView, rouletteDataset: rouletteDataset)
         pieChartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)

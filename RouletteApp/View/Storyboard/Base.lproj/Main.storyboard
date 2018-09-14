@@ -93,12 +93,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋🏼 Welcome !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAV-cq-Egn">
-                                <rect key="frame" x="0.0" y="50" width="375" height="33.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-eR-moK" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="165.5" width="335" height="335"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,15 +107,22 @@
                                     <action selector="rouletteBtn:" destination="lD4-DG-OHz" eventType="touchUpInside" id="710-Zv-SXx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋🏼 Welcome !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRg-Nu-AEy">
+                                <rect key="frame" x="10" y="112" width="355" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="XAV-cq-Egn" firstAttribute="top" secondItem="LRU-xs-pKA" secondAttribute="top" constant="30" id="7At-dO-dlp"/>
+                            <constraint firstItem="Kzh-eR-moK" firstAttribute="top" secondItem="gRg-Nu-AEy" secondAttribute="bottom" constant="20" id="1lK-i8-r8H"/>
+                            <constraint firstItem="gRg-Nu-AEy" firstAttribute="leading" secondItem="LRU-xs-pKA" secondAttribute="leading" constant="10" id="J3P-Cw-lG8"/>
+                            <constraint firstItem="gRg-Nu-AEy" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="Jj8-7y-AAg"/>
                             <constraint firstItem="Lal-RU-gbH" firstAttribute="top" secondItem="Kzh-eR-moK" secondAttribute="bottom" constant="20" id="P68-wW-dfq"/>
+                            <constraint firstItem="LRU-xs-pKA" firstAttribute="trailing" secondItem="gRg-Nu-AEy" secondAttribute="trailing" constant="10" id="PO0-Ns-CWA"/>
                             <constraint firstItem="Lal-RU-gbH" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="WGF-qs-uLx"/>
-                            <constraint firstItem="XAV-cq-Egn" firstAttribute="trailing" secondItem="LRU-xs-pKA" secondAttribute="trailing" id="apy-6k-l8K"/>
                             <constraint firstItem="Kzh-eR-moK" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="auM-97-Bao"/>
                             <constraint firstItem="Kzh-eR-moK" firstAttribute="centerY" secondItem="dnO-cv-V6U" secondAttribute="centerY" id="c0R-ZI-eMp"/>
-                            <constraint firstItem="XAV-cq-Egn" firstAttribute="leading" secondItem="LRU-xs-pKA" secondAttribute="leading" id="j3a-CC-acY"/>
                             <constraint firstItem="LRU-xs-pKA" firstAttribute="trailing" secondItem="Kzh-eR-moK" secondAttribute="trailing" constant="20" id="mOg-1t-gXr"/>
                             <constraint firstItem="Kzh-eR-moK" firstAttribute="leading" secondItem="LRU-xs-pKA" secondAttribute="leading" constant="20" id="oTo-dk-Bzv"/>
                         </constraints>
@@ -130,6 +131,7 @@
                     <connections>
                         <outlet property="pieChartView" destination="Kzh-eR-moK" id="yot-tj-iBx"/>
                         <outlet property="rouletteBtn" destination="Lal-RU-gbH" id="07N-sC-bs5"/>
+                        <outlet property="titleLbl" destination="gRg-Nu-AEy" id="Jes-lD-GtE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4g-ps-n3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,7 +160,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZ6-9m-8tk">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル🤗" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZ6-9m-8tk">
                                 <rect key="frame" x="10" y="40" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -227,6 +229,7 @@
                     <connections>
                         <outlet property="favoriteLabel" destination="2AN-kL-SkA" id="XDR-x6-eJc"/>
                         <outlet property="setDataTableView" destination="JeH-DK-q6W" id="XH9-44-tgn"/>
+                        <outlet property="titleTextField" destination="LZ6-9m-8tk" id="qoz-ID-AFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBV-1P-5Vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
