@@ -30,8 +30,8 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let dataset = RealmManager.sharedInstance.getRouletteDataset() {
-            rouletteDataset = dataset[0]
+        if let dataset = RealmManager.sharedInstance.setDataset {
+            rouletteDataset = dataset
         } else {
             rouletteDataset = RouletteDataset()
         }

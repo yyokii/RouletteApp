@@ -11,6 +11,8 @@ import RealmSwift
 class RealmManager {
     static let sharedInstance = RealmManager()
     private var database: Realm?
+    // 現在設定されているデータセット
+    var setDataset: RouletteDataset?
     
     private init() {
         database = try? Realm()
@@ -35,58 +37,20 @@ class RealmManager {
         return rouletteDataset
     }
     
-    // MARK: - データ取得
-    
-    // FIXME: id=1に絞りたい
-    func getRouletteDataset() -> Results<RouletteDataset>? {
-        let results: Results<RouletteDataset> = database!.objects(RouletteDataset.self)
-        
-        if results.count == 0 {
-            return nil
-        }
-        return results
+    // 現在設定されているデータセットを更新する
+    func updateSetDataset(dataset: RouletteDataset) {
+        self.setDataset = dataset
     }
     
-    func getFavoriteDataset() -> Results<FavoriteDataset>? {
-        let results: Results<FavoriteDataset> = database!.objects(FavoriteDataset.self)
-        return results
-    }
-
-    // MARK: - データ追加
     func addRouletteDataset(object: RouletteDataset) {
         try? database?.write {
-            database?.add(object, update: true)
+            database?.add(object)
             print("RouletteDatasetに追加しました")
         }
     }
     
-    func addFavoriteDataset(object: FavoriteDataset) {
-        try? database?.write {
-            database?.add(object)
-            print("FavoriteDatasetに追加しました")
-        }
+    func getFavoriteDataset() -> Results<RouletteDataset>? {
+        let results = database!.objects(RouletteDataset.self)
+        return results
     }
-    
-    // MARK: - データ更新
-    
-    // MARK: - データ削除
-    // RouletteDatasetのデータを全削除（データ内はid=1 の1件のみ）
-    func deleteRouletteDataset() {
-        let datasets = getRouletteDataset()
-        guard datasets != nil else {
-            return
-        }
-
-        datasets?.forEach { dataset in
-            try? database?.write {
-                database?.delete(dataset)
-            }
-        }
-    }
-    
-//    func deleteAllFromDatabase() {
-//        try? database?.write {
-//            database?.deleteAll()
-//        }
-//    }
 }

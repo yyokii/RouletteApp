@@ -15,7 +15,7 @@ class FavoriteVC: UIViewController, BaseVC {
     @IBOutlet weak var favoriteTableView: UITableView!
     
     var menuController: CariocaController?
-    var favoriteDatasets: Results<FavoriteDataset>?
+    var favoriteDatasets: Results<RouletteDataset>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
