@@ -16,10 +16,12 @@ class SetDataVC: UIViewController, BaseVC {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var favoriteLabel: FavoriteLabel!
     
-    var menuController: CariocaController?
+    let center = NotificationCenter.default
     let colorPickerViewTag = 101
-    var rouletteDataset: RouletteDataset?
     var isFavorite = false
+    var menuController: CariocaController?
+    // 編集可能な、表示用のオブジェクトとして扱う。Realmから取得する場合はcopyしたものを格納する。編集後のものをRealmに保存する場合にはmanagedオブジェクトにならないように（編集オブジェクトとして扱い続けるために）copyオブジェクトを作成しRealmに保存するようにする。
+    var rouletteDataset: RouletteDataset?
     var tappedColorViewCellRow: Int?
     
     override func viewDidLoad() {
@@ -34,20 +36,7 @@ class SetDataVC: UIViewController, BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         if let dataset = RealmManager.sharedInstance.getRouletteDataset() {
-
-            rouletteDataset = RouletteDataset()
-            // コピーオブジェクトを作成
-            let copyTitle = dataset[0].titile
-            rouletteDataset?.titile = copyTitle
-
-            let copyItems = List<RouletteItemObj>()
-            for item in dataset[0].items {
-                copyItems.append(RouletteItemObj(value: item))
-
-            }
-            rouletteDataset?.items = copyItems
-
-            //rouletteDataset = RealmManager.sharedInstance.copyOfRouletteDataset(dataset: dataset[0])
+            rouletteDataset = RealmManager.sharedInstance.copyOfRouletteDataset(dataset: dataset[0])
         } else {
             rouletteDataset = RouletteDataset()
         }
@@ -85,19 +74,20 @@ class SetDataVC: UIViewController, BaseVC {
         // favorite の状態みて favorite の方にも保存, favしたらRouletteDatasetの方は削除
         
         titleTextField.endEditing(true)
-        let center = NotificationCenter.default
         center.post(name: .removeTextFieldFocus, object: nil)
         
         if let dataset = rouletteDataset {
-            RealmManager.sharedInstance.addRouletteDataset(object: dataset)
+            let copyEditableDataset = RealmManager.sharedInstance.copyOfRouletteDataset(dataset: dataset)
+            
+            RealmManager.sharedInstance.addRouletteDataset(object: copyEditableDataset)
             if isFavorite {
-                // お気に入りに追加
+                // お気に入りに追加 FIXMEな気がする
                 let favoriteDataset = FavoriteDataset()
                 favoriteDataset.titile = dataset.titile
                 favoriteDataset.items = dataset.items
                 RealmManager.sharedInstance.addFavoriteDataset(object: favoriteDataset)
             }
-        }
+        }        
     }
     
     @IBAction func resetBtnTapped(_ sender: Any) {

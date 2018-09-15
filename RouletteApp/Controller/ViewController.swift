@@ -33,9 +33,10 @@ class ViewController: UIViewController {
             )
             carioca?.addInHostView()
             menuController = controller
-            displayDemo(HomeVC.fromStoryboard())
+            displayView(HomeVC.fromStoryboard())
         }
     }
+    
     // MARK: Rotation management
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animateAlongsideTransition(in: self.view, animation: nil, completion: { [weak self] _ in
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
         })
     }
     
-    func displayDemo(_ controller: BaseVC) {
+    func displayView(_ controller: BaseVC) {
         if let existingDemo = demoView {
             existingDemo.remove()
             demoView = nil
@@ -66,16 +67,16 @@ extension ViewController: CariocaDelegate {
     func cariocamenu(_ menu: CariocaMenu, didSelect item: CariocaMenuItem, at index: Int) {
         switch index {
         case 0:
-            displayDemo(HomeVC.fromStoryboard())
+            displayView(HomeVC.fromStoryboard())
         case 1:
-            displayDemo(SetDataVC.fromStoryboard())
+            displayView(SetDataVC.fromStoryboard())
         case 2:
-            displayDemo(FavoriteVC.fromStoryboard())
+            displayView(FavoriteVC.fromStoryboard())
         case 3:
             print("didSelect：4")
             //displayDemo(DemoIdeaViewController.fromStoryboard())
         default:
-            displayDemo(HomeVC.fromStoryboard())
+            displayView(HomeVC.fromStoryboard())
         }
     }
     

@@ -9,8 +9,8 @@
 import RealmSwift
 
 class RealmManager {
-    private var database: Realm?
     static let sharedInstance = RealmManager()
+    private var database: Realm?
     
     private init() {
         database = try? Realm()
