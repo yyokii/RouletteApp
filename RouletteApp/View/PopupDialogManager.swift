@@ -21,10 +21,10 @@ class PopupDialogManager {
                                 hideStatusBar: true) {
                                     print("Completed")
         }
-        let cancelBtn = CancelButton(title: "CANCEL") {
+        let cancelBtn = CancelButton(title: "CANCEL❎") {
             cancelTapped()
         }
-        let okBtn = DefaultButton(title: "OK") {
+        let okBtn = DefaultButton(title: "OK👍") {
             okTapped()
         }
         popup.addButtons([cancelBtn, okBtn])

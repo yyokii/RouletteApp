@@ -68,8 +68,9 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
             return
         }
         let selectedDataset = favorites[indexPath.row]
-        PopupDialogManager.showOkCancelDialog(vc: self, title: "\(selectedDataset.titile)をルーレットに設定しますか？", message: "「OK」を選択するとルーレットにデータが反映されます😌", cancelTapped: {}, okTapped: {
-            
+        PopupDialogManager.showOkCancelDialog(vc: self, title: "「\(selectedDataset.titile)」をルーレットに設定しますか？", message: "「OK」を選択するとルーレットにデータが反映されます", cancelTapped: {}, okTapped: {
+            let copyOfDataset = RealmManager.sharedInstance.copyOfRouletteDataset(dataset: selectedDataset)
+            RealmManager.sharedInstance.setDataset = copyOfDataset
         }, completion: nil)
     }
 }

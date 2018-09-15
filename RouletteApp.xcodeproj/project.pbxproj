@@ -203,9 +203,9 @@
 				B6384353213A561700CEF376 /* RouletteItem */,
 				B6384358213A593D00CEF376 /* CustomView */,
 				B63843512139895000CEF376 /* PieChartSetting.swift */,
+				B6354FC1214C2005002407D5 /* PopupDialogManager.swift */,
 				B675B413213449B00083B5A7 /* Assets.xcassets */,
 				B675B42D2134503C0083B5A7 /* Storyboard */,
-				B6354FC1214C2005002407D5 /* PopupDialogManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
