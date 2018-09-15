@@ -46,6 +46,8 @@ class SetDataVC: UIViewController, BaseVC {
 
             }
             rouletteDataset?.items = copyItems
+
+            //rouletteDataset = RealmManager.sharedInstance.copyOfRouletteDataset(dataset: dataset[0])
         } else {
             rouletteDataset = RouletteDataset()
         }

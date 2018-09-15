@@ -16,6 +16,25 @@ class RealmManager {
         database = try? Realm()
     }
     
+    /// RouletteDatasetのコピーを作成
+    ///
+    /// - Parameter dataset: managedなオブジェクト
+    /// - Returns: コピーオブジェクト
+    func copyOfRouletteDataset(dataset: RouletteDataset) -> RouletteDataset {
+        let rouletteDataset = RouletteDataset()
+        // コピーオブジェクトを作成
+        let copyTitle = dataset.titile
+        rouletteDataset.titile = copyTitle
+        
+        let copyItems = List<RouletteItemObj>()
+        for item in dataset.items {
+            copyItems.append(RouletteItemObj(value: item))
+        }
+        rouletteDataset.items = copyItems
+        
+        return rouletteDataset
+    }
+    
     // MARK: - データ取得
     
     // FIXME: id=1に絞りたい

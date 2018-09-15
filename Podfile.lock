@@ -4,6 +4,9 @@ PODS:
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
   - ChromaColorPicker (1.7)
+  - DynamicBlurView (2.0.2)
+  - PopupDialog (0.8.1):
+    - DynamicBlurView (~> 2.0)
   - Realm (3.7.6):
     - Realm/Headers (= 3.7.6)
   - Realm/Headers (3.7.6)
@@ -14,6 +17,7 @@ DEPENDENCIES:
   - CariocaMenu (~> 2.0.1)
   - Charts
   - ChromaColorPicker
+  - PopupDialog (~> 0.8)
   - RealmSwift
 
 SPEC REPOS:
@@ -21,6 +25,8 @@ SPEC REPOS:
     - CariocaMenu
     - Charts
     - ChromaColorPicker
+    - DynamicBlurView
+    - PopupDialog
     - Realm
     - RealmSwift
 
@@ -28,9 +34,11 @@ SPEC CHECKSUMS:
   CariocaMenu: ccd056f43c4c557aa3f8e60dc81396bfe052233a
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   ChromaColorPicker: 33efa67b17cca51dd253689d18b83ac7e05642c2
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  PopupDialog: 3d4e8e0795c3a614f407d730986c9b9af9781123
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: c701e8fd81c26c7d5c70037887667dab362a745f
+PODFILE CHECKSUM: 8df2858368e4abd46c056ebffbd7b5694e0726ef
 
 COCOAPODS: 1.5.2

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import CariocaMenu
+import PopupDialog
 
 class FavoriteVC: UIViewController, BaseVC {
     @IBOutlet weak var favoriteTableView: UITableView!
@@ -63,6 +64,12 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("選択されたcell：\(indexPath.row)")
+        guard let favorites = favoriteDatasets else {
+            return
+        }
+        let selectedDataset = favorites[indexPath.row]
+        PopupDialogManager.showOkCancelDialog(vc: self, title: "\(selectedDataset.titile)をルーレットに設定しますか？", message: "「OK」を選択するとルーレットにデータが反映されます😌", cancelTapped: {}, okTapped: {
+            
+        }, completion: nil)
     }
 }
