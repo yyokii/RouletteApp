@@ -5,6 +5,44 @@ PODS:
   - Charts/Core (3.1.1)
   - ChromaColorPicker (1.7)
   - DynamicBlurView (2.0.2)
+  - MaterialComponents/AnimationTiming (60.1.0)
+  - MaterialComponents/Buttons (60.1.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (60.1.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (60.1.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (60.1.0)
+  - MaterialComponents/private/KeyboardWatcher (60.1.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (60.1.0)
+  - MaterialComponents/private/Overlay (60.1.0)
+  - MaterialComponents/private/Shapes (60.1.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/ShadowElevations (60.1.0)
+  - MaterialComponents/ShadowLayer (60.1.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Snackbar (60.1.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Typography (60.1.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (1.1.0)
+  - MDFTextAccessibility (1.2.0)
   - PopupDialog (0.8.1):
     - DynamicBlurView (~> 2.0)
   - Realm (3.7.6):
@@ -17,6 +55,7 @@ DEPENDENCIES:
   - CariocaMenu (~> 2.0.1)
   - Charts
   - ChromaColorPicker
+  - MaterialComponents/Snackbar
   - PopupDialog (~> 0.8)
   - RealmSwift
 
@@ -26,6 +65,9 @@ SPEC REPOS:
     - Charts
     - ChromaColorPicker
     - DynamicBlurView
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - PopupDialog
     - Realm
     - RealmSwift
@@ -35,10 +77,13 @@ SPEC CHECKSUMS:
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   ChromaColorPicker: 33efa67b17cca51dd253689d18b83ac7e05642c2
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  MaterialComponents: bd1ebf279041919605fe6133a4173db4148ec1cd
+  MDFInternationalization: b5b8626628abf026e630e5ebaeee563037712cbb
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   PopupDialog: 3d4e8e0795c3a614f407d730986c9b9af9781123
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: 8df2858368e4abd46c056ebffbd7b5694e0726ef
+PODFILE CHECKSUM: 6eef84f931914ea2db59d5955f81ed8069c697e0
 
 COCOAPODS: 1.5.2

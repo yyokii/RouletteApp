@@ -10,6 +10,7 @@
 		8B602091F3E24444681CA742 /* Pods_RouletteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */; };
 		B6354FBF214B81FC002407D5 /* ExtensionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6354FBE214B81FC002407D5 /* ExtensionNotification.swift */; };
 		B6354FC2214C2005002407D5 /* PopupDialogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6354FC1214C2005002407D5 /* PopupDialogManager.swift */; };
+		B6354FC4214D875B002407D5 /* SnackbarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6354FC3214D875B002407D5 /* SnackbarManager.swift */; };
 		B63843422135A44000CEF376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843412135A44000CEF376 /* ViewController.swift */; };
 		B63843442135A4F100CEF376 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843432135A4F100CEF376 /* MenuVC.swift */; };
 		B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843472135A8DE00CEF376 /* Storyboardable.swift */; };
@@ -40,6 +41,7 @@
 		8B4262C464200A2DAE4417FA /* Pods-RouletteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouletteApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RouletteApp/Pods-RouletteApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B6354FBE214B81FC002407D5 /* ExtensionNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotification.swift; sourceTree = "<group>"; };
 		B6354FC1214C2005002407D5 /* PopupDialogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogManager.swift; sourceTree = "<group>"; };
+		B6354FC3214D875B002407D5 /* SnackbarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarManager.swift; sourceTree = "<group>"; };
 		B63843412135A44000CEF376 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = RouletteApp/Controller/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		B63843432135A4F100CEF376 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B63843472135A8DE00CEF376 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				B6354FC1214C2005002407D5 /* PopupDialogManager.swift */,
 				B675B413213449B00083B5A7 /* Assets.xcassets */,
 				B675B42D2134503C0083B5A7 /* Storyboard */,
+				B6354FC3214D875B002407D5 /* SnackbarManager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,6 +371,9 @@
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -378,6 +384,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -403,6 +412,7 @@
 				B6384369213AE04800CEF376 /* ExtensionUIColor.swift in Sources */,
 				B6384362213A925800CEF376 /* EffectView.swift in Sources */,
 				B6354FC2214C2005002407D5 /* PopupDialogManager.swift in Sources */,
+				B6354FC4214D875B002407D5 /* SnackbarManager.swift in Sources */,
 				B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */,
 				B6354FBF214B81FC002407D5 /* ExtensionNotification.swift in Sources */,
 				B63843422135A44000CEF376 /* ViewController.swift in Sources */,

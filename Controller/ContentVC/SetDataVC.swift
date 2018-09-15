@@ -20,7 +20,7 @@ class SetDataVC: UIViewController, BaseVC {
     let colorPickerViewTag = 101
     var isFavorite = false
     var menuController: CariocaController?
-    // 編集可能な、表示用のオブジェクトとして扱う。Realmから取得する場合はcopyしたものを格納する。編集後のものをRealmに保存する場合にはmanagedオブジェクトにならないように（編集オブジェクトとして扱い続けるために）copyオブジェクトを作成しRealmに保存するようにする。
+    // 編集可能な、表示用のオブジェクト（unmanaged）
     var rouletteDataset: RouletteDataset?
     var tappedColorViewCellRow: Int?
     
@@ -86,6 +86,9 @@ class SetDataVC: UIViewController, BaseVC {
                 favoriteDataset.items = copyEditableDataset.items
                 
                 RealmManager.sharedInstance.addRouletteDataset(object: favoriteDataset)
+                SnackbarManager.showMessageSnackbar(text: "お気に入りに登録しました❤️")
+            } else {
+                SnackbarManager.showMessageSnackbar(text: "データを設定しました👍")
             }
         }
     }

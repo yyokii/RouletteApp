@@ -6,9 +6,9 @@
 //  Copyright © 2018年 Yoki Higashihara. All rights reserved.
 //
 
-import UIKit
-import RealmSwift
 import CariocaMenu
+import PopupDialog
+import RealmSwift
 import PopupDialog
 
 class FavoriteVC: UIViewController, BaseVC {
@@ -71,6 +71,8 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
         PopupDialogManager.showOkCancelDialog(vc: self, title: "「\(selectedDataset.titile)」をルーレットに設定しますか？", message: "「OK」を選択するとルーレットにデータが反映されます", cancelTapped: {}, okTapped: {
             let copyOfDataset = RealmManager.sharedInstance.copyOfRouletteDataset(dataset: selectedDataset)
             RealmManager.sharedInstance.setDataset = copyOfDataset
+            
+            SnackbarManager.showMessageSnackbar(text: "ルーレットにデータが反映されました👍")
         }, completion: nil)
     }
 }
