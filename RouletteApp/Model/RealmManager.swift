@@ -53,4 +53,11 @@ class RealmManager {
         let results = database!.objects(RouletteDataset.self)
         return results
     }
+    
+    func deleteFavoriteDataset(object: RouletteDataset) {
+        try? database?.write {
+            database?.delete(object)
+            print("RouletteDatasetを１つ削除しました")
+        }
+    }
 }

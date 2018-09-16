@@ -28,6 +28,7 @@ class SetDataVC: UIViewController, BaseVC {
         super.viewDidLoad()
         
         titleTextField.tag = 1
+        titleTextField.delegate = self
         setDataTableView.delegate = self
         setDataTableView.dataSource = self
         setDataTableView.register(UINib(nibName: "RouletteItemCell", bundle: nil), forCellReuseIdentifier: "RouletteItemCell")
@@ -86,7 +87,7 @@ class SetDataVC: UIViewController, BaseVC {
                 favoriteDataset.items = copyEditableDataset.items
                 
                 RealmManager.sharedInstance.addRouletteDataset(object: favoriteDataset)
-                SnackbarManager.showMessageSnackbar(text: "お気に入りに登録しました❤️")
+                SnackbarManager.showMessageSnackbar(text: "データを設定しました👍\nお気に入りに登録しました❤️")
             } else {
                 SnackbarManager.showMessageSnackbar(text: "データを設定しました👍")
             }

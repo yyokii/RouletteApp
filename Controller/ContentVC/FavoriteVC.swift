@@ -75,4 +75,14 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
             SnackbarManager.showMessageSnackbar(text: "ルーレットにデータが反映されました👍")
         }, completion: nil)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let dataset = favoriteDatasets else {
+                return
+            }
+            RealmManager.sharedInstance.deleteFavoriteDataset(object: dataset[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
