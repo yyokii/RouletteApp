@@ -100,6 +100,13 @@
                                     <constraint firstAttribute="width" secondItem="Kzh-eR-moK" secondAttribute="height" multiplier="1:1" id="cMG-6t-ZyA"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRX-hO-Pfs" customClass="EmptyRouletteView" customModule="RouletteApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="166" width="335" height="335"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eRX-hO-Pfs" secondAttribute="height" multiplier="1:1" id="iG5-MJ-ff5"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lal-RU-gbH">
                                 <rect key="frame" x="156" y="520.5" width="62" height="30"/>
                                 <state key="normal" title="スタート"/>
@@ -120,15 +127,20 @@
                             <constraint firstItem="gRg-Nu-AEy" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="Jj8-7y-AAg"/>
                             <constraint firstItem="Lal-RU-gbH" firstAttribute="top" secondItem="Kzh-eR-moK" secondAttribute="bottom" constant="20" id="P68-wW-dfq"/>
                             <constraint firstItem="LRU-xs-pKA" firstAttribute="trailing" secondItem="gRg-Nu-AEy" secondAttribute="trailing" constant="10" id="PO0-Ns-CWA"/>
+                            <constraint firstItem="eRX-hO-Pfs" firstAttribute="leading" secondItem="LRU-xs-pKA" secondAttribute="leading" constant="20" id="PtU-bd-tpG"/>
                             <constraint firstItem="Lal-RU-gbH" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="WGF-qs-uLx"/>
+                            <constraint firstItem="eRX-hO-Pfs" firstAttribute="centerY" secondItem="dnO-cv-V6U" secondAttribute="centerY" id="ZOq-4A-vYT"/>
                             <constraint firstItem="Kzh-eR-moK" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="auM-97-Bao"/>
+                            <constraint firstItem="LRU-xs-pKA" firstAttribute="trailing" secondItem="eRX-hO-Pfs" secondAttribute="trailing" constant="20" id="bhS-Lf-g35"/>
                             <constraint firstItem="Kzh-eR-moK" firstAttribute="centerY" secondItem="dnO-cv-V6U" secondAttribute="centerY" id="c0R-ZI-eMp"/>
                             <constraint firstItem="LRU-xs-pKA" firstAttribute="trailing" secondItem="Kzh-eR-moK" secondAttribute="trailing" constant="20" id="mOg-1t-gXr"/>
                             <constraint firstItem="Kzh-eR-moK" firstAttribute="leading" secondItem="LRU-xs-pKA" secondAttribute="leading" constant="20" id="oTo-dk-Bzv"/>
+                            <constraint firstItem="eRX-hO-Pfs" firstAttribute="centerX" secondItem="dnO-cv-V6U" secondAttribute="centerX" id="yhz-As-Dks"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LRU-xs-pKA"/>
                     </view>
                     <connections>
+                        <outlet property="emptyRouletteView" destination="eRX-hO-Pfs" id="cDL-7I-WeH"/>
                         <outlet property="pieChartView" destination="Kzh-eR-moK" id="yot-tj-iBx"/>
                         <outlet property="rouletteBtn" destination="Lal-RU-gbH" id="07N-sC-bs5"/>
                         <outlet property="titleLbl" destination="gRg-Nu-AEy" id="Jes-lD-GtE"/>
@@ -136,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4g-ps-n3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="134"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Set DataVC-->
         <scene sceneID="24B-et-0Lc">
@@ -204,17 +216,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKS-HY-uCT" customClass="EmptyDatasetView" customModule="RouletteApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="78" width="375" height="449"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qGJ-mB-3Va" firstAttribute="top" secondItem="NGz-do-mh9" secondAttribute="bottom" constant="20" id="2eB-6x-VFQ"/>
+                            <constraint firstItem="NGz-do-mh9" firstAttribute="top" secondItem="cKS-HY-uCT" secondAttribute="bottom" constant="10" id="5XE-KH-Pzy"/>
                             <constraint firstItem="2AN-kL-SkA" firstAttribute="top" secondItem="4n0-B8-6Bu" secondAttribute="top" constant="15" id="5bx-ak-DhD"/>
                             <constraint firstItem="2AN-kL-SkA" firstAttribute="leading" secondItem="LZ6-9m-8tk" secondAttribute="trailing" constant="10" id="88p-pt-TId"/>
                             <constraint firstItem="4n0-B8-6Bu" firstAttribute="bottom" secondItem="qGJ-mB-3Va" secondAttribute="bottom" constant="50" id="9Eh-26-0he"/>
                             <constraint firstItem="qGJ-mB-3Va" firstAttribute="leading" secondItem="4n0-B8-6Bu" secondAttribute="leading" constant="20" id="9H0-kD-axR"/>
+                            <constraint firstItem="cKS-HY-uCT" firstAttribute="trailing" secondItem="4n0-B8-6Bu" secondAttribute="trailing" id="AZx-eU-X1n"/>
                             <constraint firstItem="JeH-DK-q6W" firstAttribute="trailing" secondItem="4n0-B8-6Bu" secondAttribute="trailing" id="C02-df-eOO"/>
                             <constraint firstItem="LZ6-9m-8tk" firstAttribute="top" secondItem="4n0-B8-6Bu" secondAttribute="top" constant="20" id="Fop-B3-UzN"/>
                             <constraint firstItem="NGz-do-mh9" firstAttribute="leading" secondItem="WhW-8c-LzI" secondAttribute="trailing" constant="8" id="H1j-zv-3Va"/>
+                            <constraint firstItem="cKS-HY-uCT" firstAttribute="leading" secondItem="4n0-B8-6Bu" secondAttribute="leading" id="ING-uR-nlX"/>
                             <constraint firstItem="4n0-B8-6Bu" firstAttribute="trailing" secondItem="qGJ-mB-3Va" secondAttribute="trailing" constant="20" id="MZm-y7-uVi"/>
                             <constraint firstItem="4n0-B8-6Bu" firstAttribute="trailing" secondItem="2AN-kL-SkA" secondAttribute="trailing" constant="10" id="RII-7A-W3j"/>
                             <constraint firstItem="WhW-8c-LzI" firstAttribute="top" secondItem="JeH-DK-q6W" secondAttribute="bottom" constant="10" id="Rtk-1t-t45"/>
@@ -222,11 +241,13 @@
                             <constraint firstItem="NGz-do-mh9" firstAttribute="top" secondItem="JeH-DK-q6W" secondAttribute="bottom" constant="10" id="TZT-Y9-iwz"/>
                             <constraint firstItem="LZ6-9m-8tk" firstAttribute="leading" secondItem="4n0-B8-6Bu" secondAttribute="leading" constant="10" id="YJY-sC-nSr"/>
                             <constraint firstItem="JeH-DK-q6W" firstAttribute="leading" secondItem="4n0-B8-6Bu" secondAttribute="leading" id="ch5-eg-Njq"/>
+                            <constraint firstItem="cKS-HY-uCT" firstAttribute="top" secondItem="LZ6-9m-8tk" secondAttribute="bottom" constant="8" id="iWd-YD-BwB"/>
                             <constraint firstItem="JeH-DK-q6W" firstAttribute="top" secondItem="LZ6-9m-8tk" secondAttribute="bottom" constant="8" id="vBN-so-BTb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4n0-B8-6Bu"/>
                     </view>
                     <connections>
+                        <outlet property="emptyDatasetView" destination="cKS-HY-uCT" id="97R-tx-NG7"/>
                         <outlet property="favoriteLabel" destination="2AN-kL-SkA" id="XDR-x6-eJc"/>
                         <outlet property="setDataTableView" destination="JeH-DK-q6W" id="XH9-44-tgn"/>
                         <outlet property="titleTextField" destination="LZ6-9m-8tk" id="qoz-ID-AFw"/>
@@ -244,6 +265,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6w-La-hvI" customClass="EmptyFavoriteView" customModule="RouletteApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VrA-Ny-dXV">
                                 <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -271,13 +296,18 @@
                             <constraint firstItem="6lB-1K-Hde" firstAttribute="bottom" secondItem="VrA-Ny-dXV" secondAttribute="bottom" id="24O-fp-NsX"/>
                             <constraint firstItem="VrA-Ny-dXV" firstAttribute="leading" secondItem="6lB-1K-Hde" secondAttribute="leading" id="FB3-a7-1D6"/>
                             <constraint firstItem="6lB-1K-Hde" firstAttribute="trailing" secondItem="NYL-yZ-PRp" secondAttribute="trailing" constant="10" id="Gfh-v8-lrr"/>
+                            <constraint firstItem="X6w-La-hvI" firstAttribute="leading" secondItem="6lB-1K-Hde" secondAttribute="leading" id="I8e-g2-9bn"/>
+                            <constraint firstItem="X6w-La-hvI" firstAttribute="top" secondItem="NYL-yZ-PRp" secondAttribute="bottom" constant="20" id="kvx-ev-TsU"/>
+                            <constraint firstItem="X6w-La-hvI" firstAttribute="bottom" secondItem="6lB-1K-Hde" secondAttribute="bottom" id="oPN-YQ-FT4"/>
                             <constraint firstItem="NYL-yZ-PRp" firstAttribute="leading" secondItem="6lB-1K-Hde" secondAttribute="leading" constant="10" id="u55-go-tAR"/>
                             <constraint firstItem="VrA-Ny-dXV" firstAttribute="trailing" secondItem="6lB-1K-Hde" secondAttribute="trailing" id="uhh-vC-ruk"/>
                             <constraint firstItem="NYL-yZ-PRp" firstAttribute="top" secondItem="6lB-1K-Hde" secondAttribute="top" constant="20" id="vJP-EL-LP3"/>
+                            <constraint firstItem="6lB-1K-Hde" firstAttribute="trailing" secondItem="X6w-La-hvI" secondAttribute="trailing" id="yv1-G3-jcJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6lB-1K-Hde"/>
                     </view>
                     <connections>
+                        <outlet property="emptyFavoriteView" destination="X6w-La-hvI" id="ZFR-Xu-VLn"/>
                         <outlet property="favoriteTableView" destination="VrA-Ny-dXV" id="vps-Cw-720"/>
                     </connections>
                 </viewController>

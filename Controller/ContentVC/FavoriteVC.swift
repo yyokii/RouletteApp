@@ -12,6 +12,7 @@ import RealmSwift
 import PopupDialog
 
 class FavoriteVC: UIViewController, BaseVC {
+    @IBOutlet weak var emptyFavoriteView: EmptyFavoriteView!
     @IBOutlet weak var favoriteTableView: UITableView!
     
     var menuController: CariocaController?
@@ -27,10 +28,24 @@ class FavoriteVC: UIViewController, BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         favoriteDatasets = RealmManager.sharedInstance.getFavoriteDataset()
+        checkViewVisibility()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func checkViewVisibility() {
+        guard let itemsCount = favoriteDatasets?.count else {
+            return
+        }
+        if itemsCount > 0 {
+            favoriteTableView.isHidden = false
+            emptyFavoriteView.isHidden = true
+        } else {
+            favoriteTableView.isHidden = true
+            emptyFavoriteView.isHidden = false
+        }
     }
 }
 
@@ -83,6 +98,7 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
             }
             RealmManager.sharedInstance.deleteFavoriteDataset(object: dataset[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
+            checkViewVisibility()
         }
     }
 }

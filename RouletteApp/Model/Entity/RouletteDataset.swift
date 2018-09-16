@@ -9,6 +9,6 @@
 import RealmSwift
 
 class RouletteDataset: Object {
-    @objc dynamic var titile = "ルーレット👍"
+    @objc dynamic var titile = "ルーレット"
     var items = List<RouletteItemObj>()
 }

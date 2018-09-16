@@ -12,6 +12,10 @@
 		B6354FC2214C2005002407D5 /* PopupDialogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6354FC1214C2005002407D5 /* PopupDialogManager.swift */; };
 		B6354FC4214D875B002407D5 /* SnackbarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6354FC3214D875B002407D5 /* SnackbarManager.swift */; };
 		B6354FC6214E2F9A002407D5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B6354FC5214E2F9A002407D5 /* Settings.bundle */; };
+		B6354FC8214E3907002407D5 /* EmptyDatasetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6354FC7214E3907002407D5 /* EmptyDatasetView.xib */; };
+		B6354FCB214E3F05002407D5 /* EmptyDatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6354FCA214E3F05002407D5 /* EmptyDatasetView.swift */; };
+		B6354FCD214E7D96002407D5 /* EmptyRouletteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6354FCC214E7D96002407D5 /* EmptyRouletteView.xib */; };
+		B6354FCF214E7EE7002407D5 /* EmptyRouletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6354FCE214E7EE7002407D5 /* EmptyRouletteView.swift */; };
 		B63843422135A44000CEF376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843412135A44000CEF376 /* ViewController.swift */; };
 		B63843442135A4F100CEF376 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843432135A4F100CEF376 /* MenuVC.swift */; };
 		B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843472135A8DE00CEF376 /* Storyboardable.swift */; };
@@ -35,6 +39,8 @@
 		B675B412213449AC0083B5A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B410213449AC0083B5A7 /* Main.storyboard */; };
 		B675B414213449B00083B5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B675B413213449B00083B5A7 /* Assets.xcassets */; };
 		B675B417213449B10083B5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B415213449B10083B5A7 /* LaunchScreen.storyboard */; };
+		B6B18A5C214E86F800A614A3 /* EmptyFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A5B214E86F800A614A3 /* EmptyFavoriteView.swift */; };
+		B6B18A5E214E870700A614A3 /* EmptyFavoriteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B18A5D214E870700A614A3 /* EmptyFavoriteView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,10 @@
 		B6354FC1214C2005002407D5 /* PopupDialogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogManager.swift; sourceTree = "<group>"; };
 		B6354FC3214D875B002407D5 /* SnackbarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarManager.swift; sourceTree = "<group>"; };
 		B6354FC5214E2F9A002407D5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B6354FC7214E3907002407D5 /* EmptyDatasetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDatasetView.xib; sourceTree = "<group>"; };
+		B6354FCA214E3F05002407D5 /* EmptyDatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDatasetView.swift; sourceTree = "<group>"; };
+		B6354FCC214E7D96002407D5 /* EmptyRouletteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyRouletteView.xib; sourceTree = "<group>"; };
+		B6354FCE214E7EE7002407D5 /* EmptyRouletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRouletteView.swift; sourceTree = "<group>"; };
 		B63843412135A44000CEF376 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = RouletteApp/Controller/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		B63843432135A4F100CEF376 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B63843472135A8DE00CEF376 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
@@ -69,6 +79,8 @@
 		B675B413213449B00083B5A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B675B416213449B10083B5A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B675B418213449B10083B5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6B18A5B214E86F800A614A3 /* EmptyFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFavoriteView.swift; sourceTree = "<group>"; };
+		B6B18A5D214E870700A614A3 /* EmptyFavoriteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyFavoriteView.xib; sourceTree = "<group>"; };
 		ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouletteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +102,19 @@
 				ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6354FC9214E3EC6002407D5 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				B6354FCE214E7EE7002407D5 /* EmptyRouletteView.swift */,
+				B6354FCC214E7D96002407D5 /* EmptyRouletteView.xib */,
+				B6354FCA214E3F05002407D5 /* EmptyDatasetView.swift */,
+				B6354FC7214E3907002407D5 /* EmptyDatasetView.xib */,
+				B6B18A5B214E86F800A614A3 /* EmptyFavoriteView.swift */,
+				B6B18A5D214E870700A614A3 /* EmptyFavoriteView.xib */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		B63843402135A40700CEF376 /* Controller */ = {
@@ -204,6 +229,7 @@
 		B675B42821344FDD0083B5A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B6354FC9214E3EC6002407D5 /* EmptyView */,
 				B638436E213D00ED00CEF376 /* FavoriteItem */,
 				B6384353213A561700CEF376 /* RouletteItem */,
 				B6384358213A593D00CEF376 /* CustomView */,
@@ -324,7 +350,10 @@
 				B675B417213449B10083B5A7 /* LaunchScreen.storyboard in Resources */,
 				B675B414213449B00083B5A7 /* Assets.xcassets in Resources */,
 				B6384372213D01F500CEF376 /* FavoriteItemCell.xib in Resources */,
+				B6354FCD214E7D96002407D5 /* EmptyRouletteView.xib in Resources */,
+				B6354FC8214E3907002407D5 /* EmptyDatasetView.xib in Resources */,
 				B6354FC6214E2F9A002407D5 /* Settings.bundle in Resources */,
+				B6B18A5E214E870700A614A3 /* EmptyFavoriteView.xib in Resources */,
 				B675B412213449AC0083B5A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +440,7 @@
 				B63843522139895000CEF376 /* PieChartSetting.swift in Sources */,
 				B638436B213BCB9900CEF376 /* RealmManager.swift in Sources */,
 				B6384364213AC92D00CEF376 /* RouletteItemObj.swift in Sources */,
+				B6B18A5C214E86F800A614A3 /* EmptyFavoriteView.swift in Sources */,
 				B638434C2135A95800CEF376 /* HomeVC.swift in Sources */,
 				B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */,
 				B6384369213AE04800CEF376 /* ExtensionUIColor.swift in Sources */,
@@ -424,6 +454,8 @@
 				B6384356213A56BF00CEF376 /* RouletteItemCell.swift in Sources */,
 				B6384366213AC99600CEF376 /* RouletteDataset.swift in Sources */,
 				B6384371213D01F500CEF376 /* FavoriteItemCell.swift in Sources */,
+				B6354FCF214E7EE7002407D5 /* EmptyRouletteView.swift in Sources */,
+				B6354FCB214E3F05002407D5 /* EmptyDatasetView.swift in Sources */,
 				B675B40D213449AC0083B5A7 /* AppDelegate.swift in Sources */,
 				B63843442135A4F100CEF376 /* MenuVC.swift in Sources */,
 				B638436D213C67AD00CEF376 /* FavoriteLabel.swift in Sources */,

@@ -12,6 +12,7 @@ import ChromaColorPicker
 import RealmSwift
 
 class SetDataVC: UIViewController, BaseVC {
+    @IBOutlet weak var emptyDatasetView: EmptyDatasetView!
     @IBOutlet weak var setDataTableView: UITableView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var favoriteLabel: FavoriteLabel!
@@ -41,6 +42,7 @@ class SetDataVC: UIViewController, BaseVC {
         } else {
             rouletteDataset = RouletteDataset()
         }
+        checkViewVisibility()
         titleTextField.text = rouletteDataset?.titile
     }
 
@@ -63,7 +65,25 @@ class SetDataVC: UIViewController, BaseVC {
         }
     }
     
+    private func checkViewVisibility() {
+        guard let itemsCount = rouletteDataset?.items.count else {
+            return
+        }
+        if itemsCount > 0 {
+            setDataTableView.isHidden = false
+            emptyDatasetView.isHidden = true
+        } else {
+            setDataTableView.isHidden = true
+            emptyDatasetView.isHidden = false
+        }
+    }
+    
     @IBAction func addBtnTapped(_ sender: Any) {
+        if (rouletteDataset?.items.count)! < 1 {
+            // １つ目を追加したらテーブルを表示させる
+            setDataTableView.isHidden = false
+            emptyDatasetView.isHidden = true
+        }
         let rouletteItemObj = RouletteItemObj()
         rouletteDataset?.items.append(rouletteItemObj)
         setDataTableView.reloadData()
@@ -98,9 +118,11 @@ class SetDataVC: UIViewController, BaseVC {
         // データセットの情報をリセットする、realm内のデータは消さない、空の状態でokを押したらrealm内のデータが変わる
         rouletteDataset = RouletteDataset()
         setDataTableView.reloadData()
+        checkViewVisibility()
     }
 }
 
+// MARK: - タイトルテキストフィールド
 extension SetDataVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 1 {
@@ -146,6 +168,7 @@ extension SetDataVC: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             rouletteDataset?.items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            checkViewVisibility()
         }
     }
 }

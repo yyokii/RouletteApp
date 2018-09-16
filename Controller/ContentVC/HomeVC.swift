@@ -12,6 +12,7 @@ import Charts
 
 class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var emptyRouletteView: EmptyRouletteView!
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var rouletteBtn: UIButton!
     
@@ -34,7 +35,9 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             rouletteDataset = dataset
         } else {
             rouletteDataset = RouletteDataset()
+            rouletteDataset?.titile = "🎰 ルーレット 🎲"
         }
+        checkViewVisibility()
         applyPieChartData()
     }
     
@@ -43,6 +46,19 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
         PieChartSetting.setPieChartView(chartView: pieChartView)
         PieChartSetting.setDataCount(chartView: pieChartView, rouletteDataset: rouletteDataset)
         pieChartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
+    }
+    
+    private func checkViewVisibility() {
+        guard let itemsCount = rouletteDataset?.items.count else {
+            return
+        }
+        if itemsCount > 0 {
+            pieChartView.isHidden = false
+            emptyRouletteView.isHidden = true
+        } else {
+            pieChartView.isHidden = true
+            emptyRouletteView.isHidden = false
+        }
     }
     
     @IBAction func rouletteBtn(_ sender: Any) {
