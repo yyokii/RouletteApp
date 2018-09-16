@@ -55,6 +55,7 @@ DEPENDENCIES:
   - CariocaMenu (~> 2.0.1)
   - Charts
   - ChromaColorPicker
+  - MaterialComponents/Buttons
   - MaterialComponents/Snackbar
   - PopupDialog (~> 0.8)
   - RealmSwift
@@ -84,6 +85,6 @@ SPEC CHECKSUMS:
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: 6eef84f931914ea2db59d5955f81ed8069c697e0
+PODFILE CHECKSUM: 2f4833c28f9d301be3fc4d40308f42bf3f9bbcc1
 
 COCOAPODS: 1.5.2

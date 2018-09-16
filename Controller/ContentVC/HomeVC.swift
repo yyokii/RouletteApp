@@ -35,6 +35,7 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             rouletteDataset = dataset
         } else {
             rouletteDataset = RouletteDataset()
+            // FIXME: リスト内が0の時もあるので修正必要かも
             rouletteDataset?.titile = "🎰 ルーレット 🎲"
         }
         checkViewVisibility()
