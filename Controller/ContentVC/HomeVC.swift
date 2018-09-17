@@ -77,6 +77,8 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             guard let item = selectedItem else {
                 return
             }
+            
+            // 結果をviewでフィードバックする
             resultLbl.text = "Result: \(item.itemName)🎉"
             PopupDialogManager.showOneBtnDialog(vc: self, title: "「\(item.itemName)」🎉", message: "", btnTitle: "OK👍", btnTapped: {}, completion: nil)
             
