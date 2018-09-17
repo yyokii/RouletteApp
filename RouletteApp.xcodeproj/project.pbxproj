@@ -21,7 +21,7 @@
 		B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843472135A8DE00CEF376 /* Storyboardable.swift */; };
 		B638434A2135A91400CEF376 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843492135A91400CEF376 /* BaseVC.swift */; };
 		B638434C2135A95800CEF376 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638434B2135A95800CEF376 /* HomeVC.swift */; };
-		B63843522139895000CEF376 /* PieChartSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843512139895000CEF376 /* PieChartSetting.swift */; };
+		B63843522139895000CEF376 /* PieChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63843512139895000CEF376 /* PieChartManager.swift */; };
 		B6384356213A56BF00CEF376 /* RouletteItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384354213A56BF00CEF376 /* RouletteItemCell.swift */; };
 		B6384357213A56BF00CEF376 /* RouletteItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6384355213A56BF00CEF376 /* RouletteItemCell.xib */; };
 		B638435A213A596E00CEF376 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6384359213A596E00CEF376 /* CircleView.swift */; };
@@ -59,7 +59,7 @@
 		B63843472135A8DE00CEF376 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		B63843492135A91400CEF376 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		B638434B2135A95800CEF376 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		B63843512139895000CEF376 /* PieChartSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSetting.swift; sourceTree = "<group>"; };
+		B63843512139895000CEF376 /* PieChartManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = PieChartManager.swift; sourceTree = "<group>"; };
 		B6384354213A56BF00CEF376 /* RouletteItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteItemCell.swift; sourceTree = "<group>"; };
 		B6384355213A56BF00CEF376 /* RouletteItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouletteItemCell.xib; sourceTree = "<group>"; };
 		B6384359213A596E00CEF376 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 				B638436E213D00ED00CEF376 /* FavoriteItem */,
 				B6384353213A561700CEF376 /* RouletteItem */,
 				B6384358213A593D00CEF376 /* CustomView */,
-				B63843512139895000CEF376 /* PieChartSetting.swift */,
+				B63843512139895000CEF376 /* PieChartManager.swift */,
 				B6354FC1214C2005002407D5 /* PopupDialogManager.swift */,
 				B675B413213449B00083B5A7 /* Assets.xcassets */,
 				B675B42D2134503C0083B5A7 /* Storyboard */,
@@ -437,7 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B638435A213A596E00CEF376 /* CircleView.swift in Sources */,
-				B63843522139895000CEF376 /* PieChartSetting.swift in Sources */,
+				B63843522139895000CEF376 /* PieChartManager.swift in Sources */,
 				B638436B213BCB9900CEF376 /* RealmManager.swift in Sources */,
 				B6384364213AC92D00CEF376 /* RouletteItemObj.swift in Sources */,
 				B6B18A5C214E86F800A614A3 /* EmptyFavoriteView.swift in Sources */,

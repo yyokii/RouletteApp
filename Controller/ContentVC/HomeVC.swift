@@ -14,14 +14,14 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var emptyRouletteView: EmptyRouletteView!
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var resultLbl: UILabel!
     @IBOutlet weak var rouletteBtn: UIButton!
     
     weak var menuController: CariocaController?
     var rouletteDataset: RouletteDataset?
     // true: 回転中、　false：停止中
     var spinFlag = false
-    // ルーレットを止める場所
-    var angle = 0
+    var selectedItem: RouletteItemObj?
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
@@ -38,14 +38,15 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             // FIXME: リスト内が0の時もあるので修正必要かも
             rouletteDataset?.titile = "🎰 ルーレット 🎲"
         }
+        resultLbl.text = "Result: なし"
         checkViewVisibility()
         applyPieChartData()
     }
     
     private func applyPieChartData() {
         titleLbl.text = rouletteDataset?.titile
-        PieChartSetting.setPieChartView(chartView: pieChartView)
-        PieChartSetting.setDataCount(chartView: pieChartView, rouletteDataset: rouletteDataset)
+        PieChartManager.setPieChartView(chartView: pieChartView)
+        PieChartManager.setDataCount(chartView: pieChartView, rouletteDataset: rouletteDataset)
         pieChartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
     }
     
@@ -64,18 +65,26 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     
     @IBAction func rouletteBtn(_ sender: Any) {
         if spinFlag {
-            // 回転中
-            pieChartView.spin(duration: 0,
-                           fromAngle: pieChartView.rotationAngle,
-                           toAngle: pieChartView.rotationAngle + 0,
-                           easingOption: .easeInCubic)
+            // 回転中（durationが0では動かない（spinしない）、デフォルトのangle値は270なのでそこから動かす）
+            pieChartView.spin(duration: 0.01,
+                           fromAngle: 270,
+                           toAngle: 270 + 200,
+                           easingOption: .linear)
             // FIXME: テキスト変更うまくいってない、フラグのgetter,setterで設定した方がいいかも
             rouletteBtn.titleLabel?.text = "スタート"
+            
+            selectedItem = PieChartManager.getSelectedData(chartView: pieChartView, rouletteDataset: rouletteDataset, angle: 200)
+            guard let item = selectedItem else {
+                return
+            }
+            resultLbl.text = "Result: \(item.itemName)🎉"
+            PopupDialogManager.showOneBtnDialog(vc: self, title: "「\(item.itemName)」🎉", message: "", btnTitle: "OK👍", btnTapped: {}, completion: nil)
+            
         } else {
             // 停止中
             pieChartView.spin(duration: 20,
                               fromAngle: pieChartView.rotationAngle,
-                              toAngle: pieChartView.rotationAngle + 360000,
+                              toAngle: pieChartView.rotationAngle + 36000,
                               easingOption: .easeInCubic)
            rouletteBtn.titleLabel?.text = "ストップ"
         }

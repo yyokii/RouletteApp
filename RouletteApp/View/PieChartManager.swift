@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Charts
 
-class PieChartSetting: UIView {
+class PieChartManager: UIView {
     
     /// 円グラフの設定処理
     ///
@@ -22,7 +22,7 @@ class PieChartSetting: UIView {
         chartView.drawHoleEnabled = true
         chartView.rotationEnabled = false
         chartView.highlightPerTapEnabled = true
-        chartView.rotationAngle = 0
+        //chartView.rotationAngle = 0
         chartView.chartDescription?.text = ""
         
         let paragraphStyle = NSParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle
@@ -36,8 +36,8 @@ class PieChartSetting: UIView {
     /// 円グラフのデータ設定処理
     ///
     /// - Parameters:
-    ///   - count: データ数
-    ///   - range: データレンジ
+    ///   - chartView: チャートビュー
+    ///   - rouletteDataset: データ内容
     static func setDataCount(chartView: PieChartView, rouletteDataset: RouletteDataset?) {
         guard let dataset = rouletteDataset else {
             return
@@ -60,14 +60,12 @@ class PieChartSetting: UIView {
         }
         
         set.drawIconsEnabled = false
-        set.sliceSpace = 2
+        set.sliceSpace = 0
         
         let data = PieChartData(dataSet: set)
-        
         data.setDrawValues(false)
-        
-        data.setValueFont(.systemFont(ofSize: 11, weight: .light))
-        data.setValueTextColor(UIColor.darkGray)
+        data.setValueFont(.systemFont(ofSize: 20, weight: .bold))
+        data.setValueTextColor(UIColor.gray)
         
         chartView.data = data
         chartView.highlightValues(nil)
@@ -83,5 +81,35 @@ class PieChartSetting: UIView {
             countSum += Double(data.ratio)
         }
         return countSum
+    }
+    
+    /// ルーレットの結果選択されたアイテムを取得する
+    ///
+    /// - Parameters:
+    ///   - chartView: パイチャートビュー
+    ///   - rouletteDataset: ルーレットのデータ
+    ///   - angle: 回転した角度
+    /// - Returns: 選択されたアイテムデータ
+    static func getSelectedData(chartView: PieChartView, rouletteDataset: RouletteDataset?, angle: Double) -> RouletteItemObj? {
+        guard let dataset = rouletteDataset else {
+            return nil
+        }
+        let ratioArray = (0..<dataset.items.count).map { (num) -> Double in
+            return dataset.items[num].ratio/getRange(rouletteItemObjList: dataset.items)
+        }
+        let angleRatio = angle/360.0
+        
+        var sum = 0.0
+        // カウントをインデックスに変換するために-1
+        var indexCounter = dataset.items.count - 1
+        
+        for index in (0..<ratioArray.count).reversed() {
+            sum += ratioArray[index]
+            if angleRatio <= sum {
+                break
+            }
+            indexCounter -= 1
+        }
+        return dataset.items[indexCounter]
     }
 }
