@@ -195,16 +195,19 @@ extension SetDataVC: RouletteItemCellDelegate {
         let blurView = EffectView(effect: blurEffect)
         blurView.frame = view.frame
         blurView.tag = colorPickerViewTag
-        self.view.addSubview(blurView)
+
         // 色選択viewを生成
         let colorPickerView = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         colorPickerView.delegate = self
         colorPickerView.padding = 5
         colorPickerView.stroke = 3
         colorPickerView.adjustToColor(UIColor(hex: (rouletteDataset?.items[row].colorHex)!))
-        
         colorPickerView.center = blurView.center
-        blurView.contentView.addSubview(colorPickerView)
+        
+        UIView.transition(with: self.view, duration: 0.5, options: [.transitionCrossDissolve], animations: {
+            self.view.addSubview(blurView)
+            blurView.contentView.addSubview(colorPickerView)
+        }, completion: nil)
     }
 }
 
@@ -214,7 +217,10 @@ extension SetDataVC: ChromaColorPickerDelegate {
         rouletteDataset?.items[tappedColorViewCellRow!].colorHex = color.hexCode
         
         let fetchedColorPickerView = self.view.viewWithTag(colorPickerViewTag)
-        fetchedColorPickerView?.removeFromSuperview()
+        UIView.transition(with: self.view, duration: 0.3, options: [.transitionCrossDissolve], animations: {
+            fetchedColorPickerView?.removeFromSuperview()
+        }, completion: nil)
+        
         setDataTableView.reloadData()
     }
 }
