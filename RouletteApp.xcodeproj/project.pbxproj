@@ -41,6 +41,8 @@
 		B675B417213449B10083B5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B675B415213449B10083B5A7 /* LaunchScreen.storyboard */; };
 		B6B18A5C214E86F800A614A3 /* EmptyFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A5B214E86F800A614A3 /* EmptyFavoriteView.swift */; };
 		B6B18A5E214E870700A614A3 /* EmptyFavoriteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B18A5D214E870700A614A3 /* EmptyFavoriteView.xib */; };
+		B6B18A60214FF46E00A614A3 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */; };
+		B6B18A622150029A00A614A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A612150029A00A614A3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		B675B418213449B10083B5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6B18A5B214E86F800A614A3 /* EmptyFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFavoriteView.swift; sourceTree = "<group>"; };
 		B6B18A5D214E870700A614A3 /* EmptyFavoriteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyFavoriteView.xib; sourceTree = "<group>"; };
+		B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
+		B6B18A612150029A00A614A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouletteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,7 @@
 			children = (
 				B6384368213AE04800CEF376 /* ExtensionUIColor.swift */,
 				B6354FBE214B81FC002407D5 /* ExtensionNotification.swift */,
+				B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -229,14 +234,14 @@
 		B675B42821344FDD0083B5A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B675B413213449B00083B5A7 /* Assets.xcassets */,
+				B6384358213A593D00CEF376 /* CustomView */,
 				B6354FC9214E3EC6002407D5 /* EmptyView */,
 				B638436E213D00ED00CEF376 /* FavoriteItem */,
 				B6384353213A561700CEF376 /* RouletteItem */,
-				B6384358213A593D00CEF376 /* CustomView */,
+				B675B42D2134503C0083B5A7 /* Storyboard */,
 				B63843512139895000CEF376 /* PieChartManager.swift */,
 				B6354FC1214C2005002407D5 /* PopupDialogManager.swift */,
-				B675B413213449B00083B5A7 /* Assets.xcassets */,
-				B675B42D2134503C0083B5A7 /* Storyboard */,
 				B6354FC3214D875B002407D5 /* SnackbarManager.swift */,
 			);
 			path = View;
@@ -247,6 +252,7 @@
 			children = (
 				B6384367213AE02100CEF376 /* Extension */,
 				B63843462135A8CC00CEF376 /* View */,
+				B6B18A612150029A00A614A3 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -443,8 +449,10 @@
 				B6B18A5C214E86F800A614A3 /* EmptyFavoriteView.swift in Sources */,
 				B638434C2135A95800CEF376 /* HomeVC.swift in Sources */,
 				B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */,
+				B6B18A622150029A00A614A3 /* Constants.swift in Sources */,
 				B6384369213AE04800CEF376 /* ExtensionUIColor.swift in Sources */,
 				B6384362213A925800CEF376 /* EffectView.swift in Sources */,
+				B6B18A60214FF46E00A614A3 /* ExtensionUIView.swift in Sources */,
 				B6354FC2214C2005002407D5 /* PopupDialogManager.swift in Sources */,
 				B6354FC4214D875B002407D5 /* SnackbarManager.swift in Sources */,
 				B63843482135A8DE00CEF376 /* Storyboardable.swift in Sources */,

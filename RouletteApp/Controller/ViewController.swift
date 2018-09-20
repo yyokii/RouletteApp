@@ -86,5 +86,5 @@ extension ViewController: CariocaDelegate {
 }
 
 class CariocaCustomIndicatorView: UIView, CariocaIndicatorConfiguration {
-    var color: UIColor = UIColor.black
+    var color: UIColor = UIColor(hex: menuIndicator)
 }

@@ -10,6 +10,7 @@ target 'RouletteApp' do
   pod 'CariocaMenu', '~> 2.0.1'
   pod 'ChromaColorPicker'
   pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Cards'
   pod 'MaterialComponents/Snackbar'
   pod 'RealmSwift'
   pod 'PopupDialog', '~> 0.8'

@@ -80,7 +80,10 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             
             // 結果をviewでフィードバックする
             resultLbl.text = "Result: \(item.itemName)🎉"
-            PopupDialogManager.showOneBtnDialog(vc: self, title: "「\(item.itemName)」🎉", message: "", btnTitle: "OK👍", btnTapped: {}, completion: nil)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                PopupDialogManager.showOneBtnDialog(vc: self, title: "「\(item.itemName)」🎉\nが選ばれました！", message: "", btnTitle: "OK👍", btnTapped: {}, completion: nil)
+            }
             
         } else {
             // 停止中

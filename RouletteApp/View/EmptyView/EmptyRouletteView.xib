@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,26 +18,48 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーレット作成しよう👨🏼‍💻！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-xl-oLE">
-                    <rect key="frame" x="75" y="323" width="226" height="21.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAD-iB-T9Y">
-                    <rect key="frame" x="171" y="279" width="32" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaU-aA-fzb">
+                    <rect key="frame" x="66" y="212.5" width="243.5" height="243.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="「SETDATA」から ルーレットを 作成しよう👨🏼‍💻！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-xl-oLE">
+                            <rect key="frame" x="8" y="90" width="227.5" height="64.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAD-iB-T9Y">
+                            <rect key="frame" x="106" y="41" width="32" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="CbD-xl-oLE" firstAttribute="top" secondItem="kAD-iB-T9Y" secondAttribute="bottom" constant="15" id="4dP-Rz-gGs"/>
+                        <constraint firstAttribute="trailing" secondItem="CbD-xl-oLE" secondAttribute="trailing" constant="8" id="75y-Kn-MA8"/>
+                        <constraint firstItem="CbD-xl-oLE" firstAttribute="centerY" secondItem="qaU-aA-fzb" secondAttribute="centerY" id="82w-W2-fEf"/>
+                        <constraint firstItem="kAD-iB-T9Y" firstAttribute="centerX" secondItem="qaU-aA-fzb" secondAttribute="centerX" id="BZm-PV-iPK"/>
+                        <constraint firstAttribute="width" secondItem="qaU-aA-fzb" secondAttribute="height" multiplier="1:1" id="OZ5-xQ-IDe"/>
+                        <constraint firstItem="CbD-xl-oLE" firstAttribute="centerX" secondItem="qaU-aA-fzb" secondAttribute="centerX" id="d9C-DJ-WPp"/>
+                        <constraint firstItem="CbD-xl-oLE" firstAttribute="leading" secondItem="qaU-aA-fzb" secondAttribute="leading" constant="8" id="vGx-gx-iV6"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="CbD-xl-oLE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="b6B-ce-BFu"/>
-                <constraint firstItem="CbD-xl-oLE" firstAttribute="top" secondItem="kAD-iB-T9Y" secondAttribute="bottom" constant="10" id="bAU-Q5-7KW"/>
-                <constraint firstItem="CbD-xl-oLE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="feA-c8-lZX"/>
-                <constraint firstItem="kAD-iB-T9Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kwT-V6-cc0"/>
+                <constraint firstItem="qaU-aA-fzb" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.65" id="mjL-cP-IG6"/>
+                <constraint firstItem="qaU-aA-fzb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rqD-aO-4Vj"/>
+                <constraint firstItem="qaU-aA-fzb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wNV-FY-s5E"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="99.5"/>
         </view>
     </objects>
 </document>

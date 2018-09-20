@@ -15,11 +15,20 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
+  - MaterialComponents/Cards (60.1.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+    - MaterialComponents/ShadowLayer
   - MaterialComponents/Ink (60.1.0):
     - MaterialComponents/private/Math
   - MaterialComponents/OverlayWindow (60.1.0):
     - MaterialComponents/private/Application
   - MaterialComponents/private/Application (60.1.0)
+  - MaterialComponents/private/Icons/Base (60.1.0)
+  - MaterialComponents/private/Icons/ic_check_circle (60.1.0):
+    - MaterialComponents/private/Icons/Base
   - MaterialComponents/private/KeyboardWatcher (60.1.0):
     - MaterialComponents/private/Application
   - MaterialComponents/private/Math (60.1.0)
@@ -56,6 +65,7 @@ DEPENDENCIES:
   - Charts
   - ChromaColorPicker
   - MaterialComponents/Buttons
+  - MaterialComponents/Cards
   - MaterialComponents/Snackbar
   - PopupDialog (~> 0.8)
   - RealmSwift
@@ -85,6 +95,6 @@ SPEC CHECKSUMS:
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: 2f4833c28f9d301be3fc4d40308f42bf3f9bbcc1
+PODFILE CHECKSUM: 9b5e460b13476319efdceb233d51875e2bc6efac
 
 COCOAPODS: 1.5.2
