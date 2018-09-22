@@ -295,6 +295,36 @@
             </objects>
             <point key="canvasLocation" x="2549.5999999999999" y="-91.304347826086968"/>
         </scene>
+        <!--Et CeteraVC-->
+        <scene sceneID="PhY-Qb-TBV">
+            <objects>
+                <viewController storyboardIdentifier="EtCeteraVC" id="n8e-bi-8zM" customClass="EtCeteraVC" customModule="RouletteApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bYg-nA-kgl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gb0-tF-FMp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gb0-tF-FMp" firstAttribute="top" secondItem="N45-oY-M3S" secondAttribute="top" id="6BY-Hv-2BI"/>
+                            <constraint firstItem="gb0-tF-FMp" firstAttribute="leading" secondItem="N45-oY-M3S" secondAttribute="leading" id="7mL-ei-F8A"/>
+                            <constraint firstItem="gb0-tF-FMp" firstAttribute="trailing" secondItem="N45-oY-M3S" secondAttribute="trailing" id="Ddv-CK-OGq"/>
+                            <constraint firstItem="gb0-tF-FMp" firstAttribute="bottom" secondItem="N45-oY-M3S" secondAttribute="bottom" id="emm-Fi-sRW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N45-oY-M3S"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gb0-tF-FMp" id="1Ip-nd-zlS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACu-rq-5fl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3352.8000000000002" y="-91.304347826086968"/>
+        </scene>
         <!--FavoriteVC-->
         <scene sceneID="j1v-bW-AwM">
             <objects>

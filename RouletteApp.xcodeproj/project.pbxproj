@@ -43,6 +43,7 @@
 		B6B18A5E214E870700A614A3 /* EmptyFavoriteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B18A5D214E870700A614A3 /* EmptyFavoriteView.xib */; };
 		B6B18A60214FF46E00A614A3 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */; };
 		B6B18A622150029A00A614A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A612150029A00A614A3 /* Constants.swift */; };
+		B6B18A662155E43200A614A3 /* EtCeteraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A652155E43200A614A3 /* EtCeteraVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		B6B18A5D214E870700A614A3 /* EmptyFavoriteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyFavoriteView.xib; sourceTree = "<group>"; };
 		B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		B6B18A612150029A00A614A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6B18A652155E43200A614A3 /* EtCeteraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtCeteraVC.swift; sourceTree = "<group>"; };
 		ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouletteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				B638434B2135A95800CEF376 /* HomeVC.swift */,
 				B638435D213A5BB400CEF376 /* SetDataVC.swift */,
 				B6384373213D02B400CEF376 /* FavoriteVC.swift */,
+				B6B18A652155E43200A614A3 /* EtCeteraVC.swift */,
 			);
 			path = ContentVC;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				B6384364213AC92D00CEF376 /* RouletteItemObj.swift in Sources */,
 				B6B18A5C214E86F800A614A3 /* EmptyFavoriteView.swift in Sources */,
 				B638434C2135A95800CEF376 /* HomeVC.swift in Sources */,
+				B6B18A662155E43200A614A3 /* EtCeteraVC.swift in Sources */,
 				B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */,
 				B6B18A622150029A00A614A3 /* Constants.swift in Sources */,
 				B6384369213AE04800CEF376 /* ExtensionUIColor.swift in Sources */,

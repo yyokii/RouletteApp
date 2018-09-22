@@ -49,6 +49,7 @@ class RouletteItemCell: UITableViewCell {
         itemTextField.delegate = self
         ratioTextField.delegate = self
         
+        ratioTextField.keyboardType = .numberPad
         let imageViewTap = UITapGestureRecognizer(target: self, action: #selector(colorViewTapped(sender:)))
         colorView.addGestureRecognizer(imageViewTap)
     }
@@ -72,11 +73,23 @@ class RouletteItemCell: UITableViewCell {
 }
 
 extension RouletteItemCell: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        itemTextField.resignFirstResponder()
+        ratioTextField.resignFirstResponder()
+        return true
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 1 {
             rouletteItemCellDelegate?.itemTextFieldDidEndEditing(row: row!, text: textField.text)
         } else if textField.tag == 2 {
-            rouletteItemCellDelegate?.ratioTextFieldDidEndEditing(row: row!, text: textField.text)
+            // 割合のテキストフィールドは数字のみを許容するようにする
+            if Int(textField.text!) != nil {
+                rouletteItemCellDelegate?.ratioTextFieldDidEndEditing(row: row!, text: textField.text)
+            } else {
+                textField.text = "1"
+                rouletteItemCellDelegate?.ratioTextFieldDidEndEditing(row: row!, text: textField.text)
+            }
         }
     }
 }

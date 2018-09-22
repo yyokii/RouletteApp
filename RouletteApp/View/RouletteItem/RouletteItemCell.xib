@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,26 +30,33 @@
                             <constraint firstAttribute="height" constant="40" id="btr-Oq-jIt"/>
                         </constraints>
                     </view>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アイテム名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-jJ-LnL">
-                        <rect key="frame" x="76" y="33" width="92.5" height="30"/>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="割合" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZi-ZZ-1Jg">
-                        <rect key="frame" x="178.5" y="33" width="50" height="30"/>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Rqp-rr-EjH">
+                        <rect key="frame" x="76" y="33" width="269" height="30"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アイテム名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-jJ-LnL">
+                                <rect key="frame" x="0.0" y="0.0" width="188.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="割合" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZi-ZZ-1Jg">
+                                <rect key="frame" x="203.5" y="0.0" width="65.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="g2F-jJ-LnL" firstAttribute="width" secondItem="Rqp-rr-EjH" secondAttribute="width" multiplier="0.7" id="x6b-Ue-nxs"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Rqp-rr-EjH" firstAttribute="leading" secondItem="ThX-g3-gCQ" secondAttribute="trailing" constant="20" id="01n-7R-UaL"/>
                     <constraint firstItem="ThX-g3-gCQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2VS-7o-Hvs"/>
                     <constraint firstItem="ThX-g3-gCQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8RF-I0-ECh"/>
-                    <constraint firstItem="g2F-jJ-LnL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JC2-8h-QFw"/>
-                    <constraint firstItem="g2F-jJ-LnL" firstAttribute="leading" secondItem="ThX-g3-gCQ" secondAttribute="trailing" constant="20" id="sJq-MT-tma"/>
-                    <constraint firstItem="mZi-ZZ-1Jg" firstAttribute="leading" secondItem="g2F-jJ-LnL" secondAttribute="trailing" constant="10" id="vEm-9q-Iqq"/>
-                    <constraint firstItem="mZi-ZZ-1Jg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xPa-XC-bYZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Rqp-rr-EjH" secondAttribute="trailing" constant="20" id="CX5-wI-1YG"/>
+                    <constraint firstItem="Rqp-rr-EjH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hB6-e9-e16"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

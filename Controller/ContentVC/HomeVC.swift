@@ -69,7 +69,7 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             pieChartView.spin(duration: 0.01,
                            fromAngle: 270,
                            toAngle: 270 + 200,
-                           easingOption: .linear)
+                           easingOption: .easeOutBack)
             // FIXME: テキスト変更うまくいってない、フラグのgetter,setterで設定した方がいいかも
             rouletteBtn.titleLabel?.text = "スタート"
             
@@ -89,8 +89,8 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             // 停止中
             pieChartView.spin(duration: 20,
                               fromAngle: pieChartView.rotationAngle,
-                              toAngle: pieChartView.rotationAngle + 36000,
-                              easingOption: .easeInCubic)
+                              toAngle: pieChartView.rotationAngle + 10000,
+                              easingOption: .easeOutBack)
            rouletteBtn.titleLabel?.text = "ストップ"
         }
         spinFlag = !spinFlag

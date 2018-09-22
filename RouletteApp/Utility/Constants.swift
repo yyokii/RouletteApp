@@ -7,4 +7,4 @@
 //
 
 // color
-let menuIndicator = "33323F"
+let menuIndicator = "4DBAF7"
