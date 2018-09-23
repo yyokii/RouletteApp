@@ -67,6 +67,10 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
         return 60
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteItemCell", for: indexPath) as? FavoriteItemCell
         cell?.selectionStyle = .none

@@ -16,13 +16,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よく使うルーレットは お気に入りしよう！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-AY-wNC">
-                    <rect key="frame" x="96" y="312" width="183.5" height="43"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-AY-wNC">
+                    <rect key="frame" x="87" y="269.5" width="202" height="129"/>
+                    <string key="text">よく使うルーレットは お気に入りしよう！ 「データセット」画面
+右上の「❤️」で
+お気に入りにできます！</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❤️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAL-Jq-nnN">
-                    <rect key="frame" x="171.5" y="268" width="32" height="34"/>
+                    <rect key="frame" x="171.5" y="225.5" width="32" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

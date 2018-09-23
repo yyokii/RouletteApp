@@ -85,6 +85,8 @@ class SetDataVC: UIViewController, BaseVC {
             emptyDatasetView.isHidden = true
         }
         let rouletteItemObj = RouletteItemObj()
+        let colorIndex = ((rouletteDataset?.items.count)!) % 15
+        rouletteItemObj.colorHex = rouletteDefaultColors[colorIndex]
         rouletteDataset?.items.append(rouletteItemObj)
         setDataTableView.reloadData()
     }
@@ -153,6 +155,10 @@ extension SetDataVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

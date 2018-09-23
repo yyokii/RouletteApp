@@ -44,6 +44,10 @@
 		B6B18A60214FF46E00A614A3 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */; };
 		B6B18A622150029A00A614A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A612150029A00A614A3 /* Constants.swift */; };
 		B6B18A662155E43200A614A3 /* EtCeteraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A652155E43200A614A3 /* EtCeteraVC.swift */; };
+		B6B18A6B2156B3A000A614A3 /* EtCetraItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A692156B3A000A614A3 /* EtCetraItemCell.swift */; };
+		B6B18A6C2156B3A000A614A3 /* EtCetraItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B18A6A2156B3A000A614A3 /* EtCetraItemCell.xib */; };
+		B6B18A702157670800A614A3 /* DeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A6E2157670800A614A3 /* DeveloperVC.swift */; };
+		B6B18A732157675600A614A3 /* DeveloperVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B18A722157675600A614A3 /* DeveloperVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +91,10 @@
 		B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		B6B18A612150029A00A614A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6B18A652155E43200A614A3 /* EtCeteraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtCeteraVC.swift; sourceTree = "<group>"; };
+		B6B18A692156B3A000A614A3 /* EtCetraItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtCetraItemCell.swift; sourceTree = "<group>"; };
+		B6B18A6A2156B3A000A614A3 /* EtCetraItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EtCetraItemCell.xib; sourceTree = "<group>"; };
+		B6B18A6E2157670800A614A3 /* DeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperVC.swift; sourceTree = "<group>"; };
+		B6B18A722157675600A614A3 /* DeveloperVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeveloperVC.xib; sourceTree = "<group>"; };
 		ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouletteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -240,11 +248,12 @@
 				B675B413213449B00083B5A7 /* Assets.xcassets */,
 				B6384358213A593D00CEF376 /* CustomView */,
 				B6354FC9214E3EC6002407D5 /* EmptyView */,
+				B6B18A682156B33A00A614A3 /* EtCetraItem */,
 				B638436E213D00ED00CEF376 /* FavoriteItem */,
+				B6B18A6D215766D800A614A3 /* PopupDialog */,
 				B6384353213A561700CEF376 /* RouletteItem */,
 				B675B42D2134503C0083B5A7 /* Storyboard */,
 				B63843512139895000CEF376 /* PieChartManager.swift */,
-				B6354FC1214C2005002407D5 /* PopupDialogManager.swift */,
 				B6354FC3214D875B002407D5 /* SnackbarManager.swift */,
 			);
 			path = View;
@@ -283,6 +292,25 @@
 				B675B415213449B10083B5A7 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B6B18A682156B33A00A614A3 /* EtCetraItem */ = {
+			isa = PBXGroup;
+			children = (
+				B6B18A692156B3A000A614A3 /* EtCetraItemCell.swift */,
+				B6B18A6A2156B3A000A614A3 /* EtCetraItemCell.xib */,
+			);
+			path = EtCetraItem;
+			sourceTree = "<group>";
+		};
+		B6B18A6D215766D800A614A3 /* PopupDialog */ = {
+			isa = PBXGroup;
+			children = (
+				B6354FC1214C2005002407D5 /* PopupDialogManager.swift */,
+				B6B18A6E2157670800A614A3 /* DeveloperVC.swift */,
+				B6B18A722157675600A614A3 /* DeveloperVC.xib */,
+			);
+			path = PopupDialog;
 			sourceTree = "<group>";
 		};
 		D1F511CB0E49DEC426CADEA4 /* Pods */ = {
@@ -356,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6384357213A56BF00CEF376 /* RouletteItemCell.xib in Resources */,
+				B6B18A6C2156B3A000A614A3 /* EtCetraItemCell.xib in Resources */,
 				B675B417213449B10083B5A7 /* LaunchScreen.storyboard in Resources */,
 				B675B414213449B00083B5A7 /* Assets.xcassets in Resources */,
 				B6384372213D01F500CEF376 /* FavoriteItemCell.xib in Resources */,
@@ -363,6 +392,7 @@
 				B6354FC8214E3907002407D5 /* EmptyDatasetView.xib in Resources */,
 				B6354FC6214E2F9A002407D5 /* Settings.bundle in Resources */,
 				B6B18A5E214E870700A614A3 /* EmptyFavoriteView.xib in Resources */,
+				B6B18A732157675600A614A3 /* DeveloperVC.xib in Resources */,
 				B675B412213449AC0083B5A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,11 +477,13 @@
 			files = (
 				B638435A213A596E00CEF376 /* CircleView.swift in Sources */,
 				B63843522139895000CEF376 /* PieChartManager.swift in Sources */,
+				B6B18A702157670800A614A3 /* DeveloperVC.swift in Sources */,
 				B638436B213BCB9900CEF376 /* RealmManager.swift in Sources */,
 				B6384364213AC92D00CEF376 /* RouletteItemObj.swift in Sources */,
 				B6B18A5C214E86F800A614A3 /* EmptyFavoriteView.swift in Sources */,
 				B638434C2135A95800CEF376 /* HomeVC.swift in Sources */,
 				B6B18A662155E43200A614A3 /* EtCeteraVC.swift in Sources */,
+				B6B18A6B2156B3A000A614A3 /* EtCetraItemCell.swift in Sources */,
 				B638435E213A5BB400CEF376 /* SetDataVC.swift in Sources */,
 				B6B18A622150029A00A614A3 /* Constants.swift in Sources */,
 				B6384369213AE04800CEF376 /* ExtensionUIColor.swift in Sources */,

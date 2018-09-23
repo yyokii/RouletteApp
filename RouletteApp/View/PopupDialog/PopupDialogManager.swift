@@ -19,7 +19,7 @@ class PopupDialogManager {
                                 transitionStyle: .zoomIn,
                                 tapGestureDismissal: true,
                                 panGestureDismissal: true,
-                                hideStatusBar: true) {
+                                hideStatusBar: false) {
                                     print("Completed")
         }
         let btn = DefaultButton(title: btnTitle) {
@@ -37,7 +37,7 @@ class PopupDialogManager {
                                 transitionStyle: .zoomIn,
                                 tapGestureDismissal: true,
                                 panGestureDismissal: true,
-                                hideStatusBar: true) {
+                                hideStatusBar: false) {
                                     print("Completed")
         }
         let cancelBtn = CancelButton(title: "CANCEL❎") {
@@ -48,5 +48,16 @@ class PopupDialogManager {
         }
         popup.addButtons([cancelBtn, okBtn])
         vc.present(popup, animated: animated, completion: completion)
+    }
+    
+    static func showDeveloperDialog(vc: UIViewController, animated: Bool = true) {
+        let developerVC = DeveloperVC(nibName: "DeveloperVC", bundle: nil)
+        let popup = PopupDialog(viewController: developerVC, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340.0, tapGestureDismissal: true, panGestureDismissal: true, hideStatusBar: false, completion: nil)
+        
+        let buttonOne = CancelButton(title: "OK👍") {
+        }
+        
+        popup.addButtons([buttonOne])
+        vc.present(popup, animated: animated, completion: nil)
     }
 }

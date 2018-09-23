@@ -16,6 +16,7 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var resultLbl: UILabel!
     @IBOutlet weak var rouletteBtn: UIButton!
+    @IBOutlet weak var arrowImageView: UIImageView!
     
     weak var menuController: CariocaController?
     var rouletteDataset: RouletteDataset?
@@ -35,9 +36,12 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             rouletteDataset = dataset
         } else {
             rouletteDataset = RouletteDataset()
-            // FIXME: リスト内が0の時もあるので修正必要かも
-            rouletteDataset?.titile = "🎰 ルーレット 🎲"
         }
+        
+        if (rouletteDataset?.items.count)! < 1 {
+            rouletteDataset?.titile = "ようこそ👋"
+        }
+        
         resultLbl.text = "Result: なし"
         checkViewVisibility()
         applyPieChartData()
@@ -55,20 +59,31 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             return
         }
         if itemsCount > 0 {
+            arrowImageView.isHidden = false
             pieChartView.isHidden = false
             emptyRouletteView.isHidden = true
         } else {
+            arrowImageView.isHidden = true
             pieChartView.isHidden = true
             emptyRouletteView.isHidden = false
         }
     }
     
     @IBAction func rouletteBtn(_ sender: Any) {
+        guard let itemsCount = rouletteDataset?.items.count else {
+            return
+        }
+        guard itemsCount > 0 else {
+            return
+        }
+        
         if spinFlag {
             // 回転中（durationが0では動かない（spinしない）、デフォルトのangle値は270なのでそこから動かす）
+            
+            let resultAngle = arc4random_uniform(360 + 1)
             pieChartView.spin(duration: 0.01,
                            fromAngle: 270,
-                           toAngle: 270 + 200,
+                           toAngle: CGFloat(270 + resultAngle),
                            easingOption: .easeOutBack)
             // FIXME: テキスト変更うまくいってない、フラグのgetter,setterで設定した方がいいかも
             rouletteBtn.titleLabel?.text = "スタート"

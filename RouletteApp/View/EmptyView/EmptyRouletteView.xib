@@ -21,7 +21,7 @@
                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaU-aA-fzb">
                     <rect key="frame" x="66" y="212.5" width="243.5" height="243.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="「SETDATA」から ルーレットを 作成しよう👨🏼‍💻！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-xl-oLE">
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="「データセット」から ルーレットを 作成しよう👨🏼‍💻！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-xl-oLE">
                             <rect key="frame" x="8" y="90" width="227.5" height="64.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="highlightedColor"/>

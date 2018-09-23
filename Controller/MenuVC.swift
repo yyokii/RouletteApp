@@ -20,11 +20,10 @@ class MenuVC: UITableViewController, CariocaDataSource {
     var boomerang: BoomerangType = .none
     ///The menu items displayed
     var menuItems: [CariocaMenuItem] = [
-        CariocaMenuItem("Roulette", .emoji("👍")),
-        CariocaMenuItem("SetData", .emoji("👨🏼‍💻")),
-        CariocaMenuItem("Favorite", .emoji("❤️")),
-        CariocaMenuItem("Travel", .emoji("✈️")),
-        CariocaMenuItem("Webview", .emoji("⚽️"))
+        CariocaMenuItem("ルーレット", .emoji("👍")),
+        CariocaMenuItem("データセット", .emoji("👨🏼‍💻")),
+        CariocaMenuItem("お気に入り", .emoji("❤️")),
+        CariocaMenuItem("このアプリについて", .emoji("⚙️"))
     ]
     ///This defines the height of each menu item
     func heightForRow() -> CGFloat { return 60.0 }

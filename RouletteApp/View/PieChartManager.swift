@@ -51,9 +51,9 @@ class PieChartManager: UIView {
                                      label: dataset.items[num].itemName,
                                      icon: nil)
         }
-        
+                
         let set = PieChartDataSet(values: entries, label: "Roulette")
-
+        
         // 色を設定
         set.colors = (0..<dataset.items.count).map { (num) -> UIColor in
             return UIColor(hex: dataset.items[num].colorHex)
@@ -65,7 +65,7 @@ class PieChartManager: UIView {
         let data = PieChartData(dataSet: set)
         data.setDrawValues(false)
         data.setValueFont(.systemFont(ofSize: 20, weight: .bold))
-        data.setValueTextColor(UIColor.gray)
+        data.setValueTextColor(UIColor.darkGray)
         
         chartView.data = data
         chartView.highlightValues(nil)

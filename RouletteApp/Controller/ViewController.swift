@@ -73,8 +73,7 @@ extension ViewController: CariocaDelegate {
         case 2:
             displayView(FavoriteVC.fromStoryboard())
         case 3:
-            print("didSelect：4")
-            //displayDemo(DemoIdeaViewController.fromStoryboard())
+            displayView(EtCeteraVC.fromStoryboard())
         default:
             displayView(HomeVC.fromStoryboard())
         }
