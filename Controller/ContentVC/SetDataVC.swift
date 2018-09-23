@@ -10,6 +10,7 @@ import UIKit
 import CariocaMenu
 import ChromaColorPicker
 import RealmSwift
+import ViewAnimator
 
 class SetDataVC: UIViewController, BaseVC {
     @IBOutlet weak var emptyDatasetView: EmptyDatasetView!
@@ -45,6 +46,12 @@ class SetDataVC: UIViewController, BaseVC {
         checkViewVisibility()
         titleTextField.text = rouletteDataset?.titile
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (rouletteDataset?.items.count)! > 0 {
+            animateTableView()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,10 +79,20 @@ class SetDataVC: UIViewController, BaseVC {
         if itemsCount > 0 {
             setDataTableView.isHidden = false
             emptyDatasetView.isHidden = true
+            
         } else {
             setDataTableView.isHidden = true
             emptyDatasetView.isHidden = false
         }
+    }
+    
+    private func animateTableView() {
+        let table = setDataTableView.visibleCells
+        
+        let fromAnimation = AnimationType.from(direction: .right, offset: 170.0)
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        UIView.animate(views: table,
+                       animations: [fromAnimation, zoomAnimation], duration: 0.7)
     }
     
     @IBAction func addBtnTapped(_ sender: Any) {
@@ -88,7 +105,9 @@ class SetDataVC: UIViewController, BaseVC {
         let colorIndex = ((rouletteDataset?.items.count)!) % 15
         rouletteItemObj.colorHex = rouletteDefaultColors[colorIndex]
         rouletteDataset?.items.append(rouletteItemObj)
-        setDataTableView.reloadData()
+        
+        let index = IndexPath(row: (rouletteDataset?.items.count)! - 1, section: 0)
+        setDataTableView.insertRows(at: [index], with: UITableViewRowAnimation.left)
     }
     
     @IBAction func setBtnTapped(_ sender: Any) {
@@ -119,8 +138,11 @@ class SetDataVC: UIViewController, BaseVC {
     @IBAction func resetBtnTapped(_ sender: Any) {
         // データセットの情報をリセットする、realm内のデータは消さない、空の状態でokを押したらrealm内のデータが変わる
         rouletteDataset = RouletteDataset()
-        setDataTableView.reloadData()
-        checkViewVisibility()
+        UIView.animate(views: setDataTableView.visibleCells, animations: [AnimationType.from(direction: .bottom, offset: 30.0)], reversed: true,
+                       initialAlpha: 1.0, finalAlpha: 0.0, completion: {
+                        self.setDataTableView.reloadData()
+                        self.checkViewVisibility()
+        })
     }
 }
 

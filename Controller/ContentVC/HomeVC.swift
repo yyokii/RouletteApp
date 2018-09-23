@@ -9,6 +9,7 @@
 import UIKit
 import CariocaMenu
 import Charts
+import ViewAnimator
 
 class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     @IBOutlet weak var titleLbl: UILabel!
@@ -41,10 +42,13 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
         if (rouletteDataset?.items.count)! < 1 {
             rouletteDataset?.titile = "ようこそ👋"
         }
-        
         resultLbl.text = "Result: なし"
         checkViewVisibility()
         applyPieChartData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateView()
     }
     
     private func applyPieChartData() {
@@ -69,11 +73,16 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
         }
     }
     
+    private func animateView() {
+        let fromAnimation = AnimationType.from(direction: .top, offset: 100.0)
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        
+        titleLbl.animate(animations: [fromAnimation, zoomAnimation], duration: 0.5)
+        arrowImageView.animate(animations: [fromAnimation, zoomAnimation], duration: 0.5)
+    }
+    
     @IBAction func rouletteBtn(_ sender: Any) {
-        guard let itemsCount = rouletteDataset?.items.count else {
-            return
-        }
-        guard itemsCount > 0 else {
+        guard (rouletteDataset?.items.count)! > 0 else {
             return
         }
         

@@ -10,6 +10,7 @@ import CariocaMenu
 import PopupDialog
 import RealmSwift
 import PopupDialog
+import ViewAnimator
 
 class FavoriteVC: UIViewController, BaseVC {
     @IBOutlet weak var emptyFavoriteView: EmptyFavoriteView!
@@ -31,6 +32,12 @@ class FavoriteVC: UIViewController, BaseVC {
         checkViewVisibility()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if (favoriteDatasets?.count)! > 0 {
+            animateTableView()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -46,6 +53,15 @@ class FavoriteVC: UIViewController, BaseVC {
             favoriteTableView.isHidden = true
             emptyFavoriteView.isHidden = false
         }
+    }
+    
+    private func animateTableView() {
+        let table = favoriteTableView.visibleCells
+        
+        let fromAnimation = AnimationType.from(direction: .right, offset: 170.0)
+        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        UIView.animate(views: table,
+                       animations: [fromAnimation, zoomAnimation], duration: 0.7)
     }
 }
 

@@ -14,5 +14,6 @@ target 'RouletteApp' do
   pod 'MaterialComponents/Snackbar'
   pod 'RealmSwift'
   pod 'PopupDialog', '~> 0.8'
+  pod "ViewAnimator"
 
 end

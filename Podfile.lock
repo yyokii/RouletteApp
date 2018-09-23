@@ -59,6 +59,7 @@ PODS:
   - Realm/Headers (3.7.6)
   - RealmSwift (3.7.6):
     - Realm (= 3.7.6)
+  - ViewAnimator (2.1.2)
 
 DEPENDENCIES:
   - CariocaMenu (~> 2.0.1)
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - MaterialComponents/Snackbar
   - PopupDialog (~> 0.8)
   - RealmSwift
+  - ViewAnimator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -82,6 +84,7 @@ SPEC REPOS:
     - PopupDialog
     - Realm
     - RealmSwift
+    - ViewAnimator
 
 SPEC CHECKSUMS:
   CariocaMenu: ccd056f43c4c557aa3f8e60dc81396bfe052233a
@@ -94,7 +97,8 @@ SPEC CHECKSUMS:
   PopupDialog: 3d4e8e0795c3a614f407d730986c9b9af9781123
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
+  ViewAnimator: 20df9a24a076c6ee78b77a4dbf1943808c94954e
 
-PODFILE CHECKSUM: 9b5e460b13476319efdceb233d51875e2bc6efac
+PODFILE CHECKSUM: 4972870128eaa1aae58c633065cd027893a750a2
 
 COCOAPODS: 1.5.2
