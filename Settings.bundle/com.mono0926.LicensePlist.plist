@@ -84,6 +84,14 @@
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/ViewAnimator</string>
+			<key>Title</key>
+			<string>ViewAnimator</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
 	</array>
 </dict>
 </plist>

@@ -650,6 +650,7 @@
 			baseConfigurationReference = 8B4262C464200A2DAE4417FA /* Pods-RouletteApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAZT2D654U;
 				INFOPLIST_FILE = RouletteApp/Info.plist;
@@ -659,6 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yyokii.RouletteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -669,6 +671,7 @@
 			baseConfigurationReference = 0F1EC45F3F06AFDEB830889F /* Pods-RouletteApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAZT2D654U;
 				INFOPLIST_FILE = RouletteApp/Info.plist;
@@ -678,6 +681,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yyokii.RouletteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

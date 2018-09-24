@@ -48,6 +48,10 @@ body: TABLE OF CONTENTS
 1…
 version: 3.7.6
 
+name: ViewAnimator, nameSpecified: 
+body: Copyright (c) 2018 m…
+version: 2.1.2
+
 add-version-numbers: false
 
 LicensePlist Version: 1.8.3
