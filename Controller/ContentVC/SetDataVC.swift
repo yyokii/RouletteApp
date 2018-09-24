@@ -17,6 +17,7 @@ class SetDataVC: UIViewController, BaseVC {
     @IBOutlet weak var setDataTableView: UITableView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var favoriteLabel: FavoriteLabel!
+    @IBOutlet weak var addBtn: UIButton!
     
     let center = NotificationCenter.default
     let colorPickerViewTag = 101
@@ -28,6 +29,8 @@ class SetDataVC: UIViewController, BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNotificationObserver()
         
         titleTextField.tag = 1
         titleTextField.delegate = self
@@ -55,6 +58,12 @@ class SetDataVC: UIViewController, BaseVC {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func setNotificationObserver() {
+        center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     private func setFavoriteBtn() {
@@ -93,6 +102,19 @@ class SetDataVC: UIViewController, BaseVC {
         let zoomAnimation = AnimationType.zoom(scale: 0.2)
         UIView.animate(views: table,
                        animations: [fromAnimation, zoomAnimation], duration: 0.7)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            setDataTableView.contentInset = UIEdgeInsets(top: 0.0, left: 0, bottom: keyboardSize.height, right: 0)
+        }
+    }
+    @objc func keyboardWillHide(_ notification: Notification) {
+        
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            setDataTableView.contentInset = UIEdgeInsets(top: 0.0, left: 0, bottom: 0, right: 0)
+        }
     }
     
     @IBAction func addBtnTapped(_ sender: Any) {
@@ -136,12 +158,19 @@ class SetDataVC: UIViewController, BaseVC {
     }
     
     @IBAction func resetBtnTapped(_ sender: Any) {
+        guard (rouletteDataset?.items.count)! > 0 else {
+            return
+        }
+        // リセット処理が完了するまでは「追加」処理ができないようにする（データ不整合が生じるのを防ぐため）
+        addBtn.isEnabled = false
+        
         // データセットの情報をリセットする、realm内のデータは消さない、空の状態でokを押したらrealm内のデータが変わる
         rouletteDataset = RouletteDataset()
         UIView.animate(views: setDataTableView.visibleCells, animations: [AnimationType.from(direction: .bottom, offset: 30.0)], reversed: true,
                        initialAlpha: 1.0, finalAlpha: 0.0, completion: {
                         self.setDataTableView.reloadData()
                         self.checkViewVisibility()
+                        self.addBtn.isEnabled = true
         })
     }
 }

@@ -94,8 +94,8 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
                            fromAngle: 270,
                            toAngle: CGFloat(270 + resultAngle),
                            easingOption: .easeOutBack)
-            // FIXME: テキスト変更うまくいってない、フラグのgetter,setterで設定した方がいいかも
-            rouletteBtn.titleLabel?.text = "スタート"
+            rouletteBtn.backgroundColor = UIColor(hex: "005493")
+            rouletteBtn.setTitle("  START🏁  ", for: UIControlState.normal)
             
             selectedItem = PieChartManager.getSelectedData(chartView: pieChartView, rouletteDataset: rouletteDataset, angle: 200)
             guard let item = selectedItem else {
@@ -115,7 +115,8 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
                               fromAngle: pieChartView.rotationAngle,
                               toAngle: pieChartView.rotationAngle + 10000,
                               easingOption: .easeOutBack)
-           rouletteBtn.titleLabel?.text = "ストップ"
+            rouletteBtn.backgroundColor = UIColor(hex: "E91E63")
+            rouletteBtn.setTitle("  STOP⏹  ", for: UIControlState.normal)
         }
         spinFlag = !spinFlag
     }
