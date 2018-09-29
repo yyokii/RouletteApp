@@ -48,6 +48,7 @@
 		B6B18A6C2156B3A000A614A3 /* EtCetraItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B18A6A2156B3A000A614A3 /* EtCetraItemCell.xib */; };
 		B6B18A702157670800A614A3 /* DeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A6E2157670800A614A3 /* DeveloperVC.swift */; };
 		B6B18A732157675600A614A3 /* DeveloperVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B18A722157675600A614A3 /* DeveloperVC.xib */; };
+		B6B18A752158EB3700A614A3 /* ExtensionUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B18A742158EB3700A614A3 /* ExtensionUITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		B6B18A6A2156B3A000A614A3 /* EtCetraItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EtCetraItemCell.xib; sourceTree = "<group>"; };
 		B6B18A6E2157670800A614A3 /* DeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperVC.swift; sourceTree = "<group>"; };
 		B6B18A722157675600A614A3 /* DeveloperVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeveloperVC.xib; sourceTree = "<group>"; };
+		B6B18A742158EB3700A614A3 /* ExtensionUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITextField.swift; sourceTree = "<group>"; };
 		ECC55971986188C26647E7D4 /* Pods_RouletteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouletteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 				B6384368213AE04800CEF376 /* ExtensionUIColor.swift */,
 				B6354FBE214B81FC002407D5 /* ExtensionNotification.swift */,
 				B6B18A5F214FF46E00A614A3 /* ExtensionUIView.swift */,
+				B6B18A742158EB3700A614A3 /* ExtensionUITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				B63843422135A44000CEF376 /* ViewController.swift in Sources */,
 				B6384374213D02B400CEF376 /* FavoriteVC.swift in Sources */,
 				B6384356213A56BF00CEF376 /* RouletteItemCell.swift in Sources */,
+				B6B18A752158EB3700A614A3 /* ExtensionUITextField.swift in Sources */,
 				B6384366213AC99600CEF376 /* RouletteDataset.swift in Sources */,
 				B6384371213D01F500CEF376 /* FavoriteItemCell.swift in Sources */,
 				B6354FCF214E7EE7002407D5 /* EmptyRouletteView.swift in Sources */,
@@ -662,7 +666,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -683,7 +687,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

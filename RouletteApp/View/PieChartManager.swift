@@ -47,7 +47,7 @@ class PieChartManager: UIView {
         let range = getRange(rouletteItemObjList: dataset.items)
         let entries = (0..<dataset.items.count).map { (num) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
-            return PieChartDataEntry(value: Double(dataset.items[num].ratio)/range * 100.0,
+            return PieChartDataEntry(value: (Double(dataset.items[num].ratio)/Double(range)) * 100,
                                      label: dataset.items[num].itemName,
                                      icon: nil)
         }
@@ -75,10 +75,10 @@ class PieChartManager: UIView {
     ///
     /// - Parameter rouletteItemObjList: dbから取得した投稿データ
     /// - Returns: 分母として使う数字
-    static func getRange(rouletteItemObjList: List<RouletteItemObj>) -> Double {
-        var countSum = 0.0
+    static func getRange(rouletteItemObjList: List<RouletteItemObj>) -> Int {
+        var countSum = 0
         for data in rouletteItemObjList {
-            countSum += Double(data.ratio)
+            countSum += Int(data.ratio)
         }
         return countSum
     }
@@ -95,7 +95,7 @@ class PieChartManager: UIView {
             return nil
         }
         let ratioArray = (0..<dataset.items.count).map { (num) -> Double in
-            return dataset.items[num].ratio/getRange(rouletteItemObjList: dataset.items)
+            return Double(dataset.items[num].ratio)/Double(getRange(rouletteItemObjList: dataset.items))
         }
         let angleRatio = angle/360.0
         
@@ -105,7 +105,7 @@ class PieChartManager: UIView {
         
         for index in (0..<ratioArray.count).reversed() {
             sum += ratioArray[index]
-            if angleRatio <= sum {
+            if angleRatio <= Double(sum) {
                 break
             }
             indexCounter -= 1

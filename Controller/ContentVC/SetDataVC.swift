@@ -106,13 +106,13 @@ class SetDataVC: UIViewController, BaseVC {
     
     @objc func keyboardWillShow(_ notification: Notification) {
         
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             setDataTableView.contentInset = UIEdgeInsets(top: 0.0, left: 0, bottom: keyboardSize.height, right: 0)
         }
     }
     @objc func keyboardWillHide(_ notification: Notification) {
         
-        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+        if ((notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             setDataTableView.contentInset = UIEdgeInsets(top: 0.0, left: 0, bottom: 0, right: 0)
         }
     }
@@ -177,6 +177,11 @@ class SetDataVC: UIViewController, BaseVC {
 
 // MARK: - タイトルテキストフィールド
 extension SetDataVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleTextField.resignFirstResponder()
+        return true
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 1 {
             // タイトルテキストフィールド
@@ -240,7 +245,7 @@ extension SetDataVC: RouletteItemCellDelegate {
     
     func ratioTextFieldDidEndEditing(row: Int, text: String?) {
         if let ratioText = text {
-            rouletteDataset?.items[row].ratio = Double(ratioText)!
+            rouletteDataset?.items[row].ratio = Int(ratioText)!
         }
     }
     

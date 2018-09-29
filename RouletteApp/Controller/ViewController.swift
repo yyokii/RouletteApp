@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             addChildViewController(controller)
             carioca = CariocaMenu(controller: controller,
                                   hostView: self.view,
-                                  edges: [.right, .left], //[.left, .right], //[.left],
+                                  edges: [.right], //[.left, .right], //[.left],
                 delegate: self,
                 indicator: CariocaCustomIndicatorView() //CustomPolygonIndicator()
             )

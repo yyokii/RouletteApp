@@ -11,5 +11,5 @@ import RealmSwift
 class RouletteItemObj: Object {
     @objc dynamic var colorHex = "FF9300"
     @objc dynamic var itemName = "アイテム"
-    @objc dynamic var ratio: Double = 1
+    @objc dynamic var ratio = 1
 }

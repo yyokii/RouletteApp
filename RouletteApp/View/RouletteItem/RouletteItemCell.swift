@@ -19,7 +19,9 @@ class RouletteItemCell: UITableViewCell {
 
     @IBOutlet weak var colorView: CircleView!
     @IBOutlet weak var itemTextField: UITextField!
-    @IBOutlet weak var ratioTextField: UITextField!
+    @IBOutlet weak var ratioTextField: UITextField! {
+        didSet { ratioTextField?.addDoneCancelToolbar() }
+    }
     
     // 何番目のcellか
     var row: Int?

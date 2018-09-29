@@ -24,6 +24,7 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
     // true: 回転中、　false：停止中
     var spinFlag = false
     var selectedItem: RouletteItemObj?
+    var resultAngle: UInt32 = 0
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
@@ -40,8 +41,9 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
         }
         
         if (rouletteDataset?.items.count)! < 1 {
-            rouletteDataset?.titile = "ようこそ👋"
+            rouletteDataset?.titile = "ルーレット"
         }
+        
         resultLbl.text = "Result: なし"
         checkViewVisibility()
         applyPieChartData()
@@ -88,16 +90,14 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
         
         if spinFlag {
             // 回転中（durationが0では動かない（spinしない）、デフォルトのangle値は270なのでそこから動かす）
-            
-            let resultAngle = arc4random_uniform(360 + 1)
             pieChartView.spin(duration: 0.01,
                            fromAngle: 270,
                            toAngle: CGFloat(270 + resultAngle),
-                           easingOption: .easeOutBack)
+                           easingOption: .linear)
             rouletteBtn.backgroundColor = UIColor(hex: "005493")
             rouletteBtn.setTitle("  START🏁  ", for: UIControlState.normal)
             
-            selectedItem = PieChartManager.getSelectedData(chartView: pieChartView, rouletteDataset: rouletteDataset, angle: 200)
+            selectedItem = PieChartManager.getSelectedData(chartView: pieChartView, rouletteDataset: rouletteDataset, angle: Double(resultAngle))
             guard let item = selectedItem else {
                 return
             }
@@ -110,11 +110,13 @@ class HomeVC: UIViewController, BaseVC, ChartViewDelegate {
             }
             
         } else {
+            resultLbl.text = "Result: なし"
+            resultAngle = arc4random_uniform(360 + 1)
             // 停止中
-            pieChartView.spin(duration: 20,
-                              fromAngle: pieChartView.rotationAngle,
-                              toAngle: pieChartView.rotationAngle + 10000,
-                              easingOption: .easeOutBack)
+            pieChartView.spin(duration: 10,
+                              fromAngle: 270,
+                              toAngle: 270 + 10080 + CGFloat(resultAngle),
+                              easingOption: .linear)
             rouletteBtn.backgroundColor = UIColor(hex: "E91E63")
             rouletteBtn.setTitle("  STOP⏹  ", for: UIControlState.normal)
         }

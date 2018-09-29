@@ -9,6 +9,7 @@
 import UIKit
 import CariocaMenu
 import PopupDialog
+import Accounts
 
 class EtCeteraVC: UIViewController, BaseVC {
     
@@ -26,6 +27,28 @@ class EtCeteraVC: UIViewController, BaseVC {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func showShareView() {
+        // 共有する項目
+        let shareText = "マイルーレット ~ 自分だけのルーレットをつくろう👍 ~"
+        var activityItems = [shareText] as [Any]
+        if let shareWebsite = NSURL(string: "https://itunes.apple.com/us/app/マイルーレット/id1437125078?l=ja&ls=1&mt=8") {
+            activityItems.append(shareWebsite)
+        }
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        // アクティビティタイプ
+        let excludedActivityTypes = [
+            UIActivityType.postToFacebook,
+            UIActivityType.postToTwitter,
+            UIActivityType.message,
+            UIActivityType.saveToCameraRoll,
+            UIActivityType.print
+        ]
+        
+        activityVC.excludedActivityTypes = excludedActivityTypes
+        self.present(activityVC, animated: true, completion: nil)
     }
 }
 
@@ -82,8 +105,11 @@ extension EtCeteraVC: UITableViewDelegate {
                 UIApplication.shared.open(url)
             }
         case 2:
-            print("2")
+            showShareView()
         case 3:
+            if let url = URL(string: "https://itunes.apple.com/us/app/マイルーレット/id1437125078?l=ja&ls=1&mt=8?action=write-review") {
+                UIApplication.shared.open(url)
+            }
             print("3")
         default:
             print("4")
