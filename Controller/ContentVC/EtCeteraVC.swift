@@ -31,23 +31,13 @@ class EtCeteraVC: UIViewController, BaseVC {
     
     private func showShareView() {
         // 共有する項目
-        let shareText = "マイルーレット ~ 自分だけのルーレットをつくろう👍 ~"
+        let shareText = "オススメのアプリ！　マイルーレット -無料×広告なし×簡単なルーレットアプリ- "
         var activityItems = [shareText] as [Any]
-        if let shareWebsite = NSURL(string: "https://itunes.apple.com/us/app/マイルーレット/id1437125078?l=ja&ls=1&mt=8") {
+        if let shareWebsite = NSURL(string: "https://itunes.apple.com/us/app/%E3%83%9E%E3%82%A4%E3%83%AB%E3%83%BC%E3%83%AC%E3%83%83%E3%83%88/id1437125078?l=ja&ls=1&mt=8") {
             activityItems.append(shareWebsite)
         }
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        // アクティビティタイプ
-        let excludedActivityTypes = [
-            UIActivityType.postToFacebook,
-            UIActivityType.postToTwitter,
-            UIActivityType.message,
-            UIActivityType.saveToCameraRoll,
-            UIActivityType.print
-        ]
-        
-        activityVC.excludedActivityTypes = excludedActivityTypes
         self.present(activityVC, animated: true, completion: nil)
     }
 }
@@ -107,7 +97,7 @@ extension EtCeteraVC: UITableViewDelegate {
         case 2:
             showShareView()
         case 3:
-            if let url = URL(string: "https://itunes.apple.com/us/app/マイルーレット/id1437125078?l=ja&ls=1&mt=8?action=write-review") {
+            if let url = URL(string: "https://itunes.apple.com/us/app//id1437125078?action=write-review") {
                 UIApplication.shared.open(url)
             }
             print("3")
